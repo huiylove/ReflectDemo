@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="E:/Eclipse/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/cglib-nodep-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/mysql-connector-java-5.1.34.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/spring-core-4.0.9.RELEASE.jar" sourcepath="D:/devtools/mvnrepo2/org/springframework/spring-core/4.0.9.RELEASE/spring-core-4.0.9.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/slf4j/slf4j-log4j12/1.7.6/slf4j-log4j12-1.7.6.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/log4j/log4j/1.2.12/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-context/4.0.9.RELEASE/spring-context-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-expression/4.0.9.RELEASE/spring-expression-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/spring-jdbc-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/db2jcc4.jar"/>
+	<classpathentry kind="lib" path="E:/Eclipse/org.springframework.transaction-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-test/4.0.9.RELEASE/spring-test-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/junit/junit/4.11/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-aop/4.0.9.RELEASE/spring-aop-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-beans/4.0.9.RELEASE/spring-beans-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

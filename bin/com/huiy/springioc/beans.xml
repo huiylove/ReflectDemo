@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"  
+  "http://www.springframework.org/dtd/spring-beans.dtd">  
+<beans>
+<!--     <context:component-scan base-package="com.huiy.*" />   -->
+    
+    <bean id="Person" class="com.huiy.springioc.Person">
+        <property name="name">
+            <value>小龙</value>
+        </property>  
+        <property name="age">  
+            <value>23</value> <!--这里的名字是通过程序里面的set来赋值的，不信你去掉程序里面相关的set，就出错了 --> 
+        </property>  
+        <property name="grade"><!-- 这里有点特别，这个grade变量是一个对象，和一般的变量要区别对待 -->  
+            <ref local="Grade"/><!-- 这里指向了本配置文件里面一个名字叫Grade(即id=Grade)的bean -->
+        </property>  
+    </bean>  
+    <bean id="Grade" class="com.huiy.springioc.Grade">
+        <property name="math">  
+            <value>99</value>  
+        </property>  
+        <property name="english">  
+            <value>59</value>  
+        </property>  
+    </bean>  
+    
+    
+     <bean id="javaCollection" class="com.huiy.springioc.JavaCollection">
+        <property name="customList">
+	         <list>
+		       <value>INDIA</value>
+	           <value>Pakistan</value>
+	           <value>USA</value>
+	           <value>UK</value>
+		     </list>
+        </property>
+    </bean> 
+    
+    <bean id="adminUser" class="com.huiy.springioc.JavaProperties">
+    <property name="email">
+    	<props>
+      		<prop key="admin">admin@nospam.com</prop>
+         	<prop key="support">support@nospam.com</prop>
+    	</props>
+    </property>
+    </bean>
+    
+    <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="5" />
+		<property name="maxPoolSize" value="30" />
+		<property name="queueCapacity" value="5" />
+	</bean>
+	
+	
+    
+</beans>  
