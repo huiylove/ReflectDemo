@@ -1,4 +1,4 @@
-package com.huiy.RPC.RMI;
+package com.huiy.RPC.rmi;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

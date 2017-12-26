@@ -22,6 +22,7 @@ public class Singleton {
 		return instance;
 	}
 	
+
 	//Ë«ÖØĞ£ÑéËø
 //	public static Singleton getInstance(){
 //		if(instance==null){

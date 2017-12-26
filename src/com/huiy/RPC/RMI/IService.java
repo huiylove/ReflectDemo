@@ -1,4 +1,4 @@
-package com.huiy.RPC.RMI;
+package com.huiy.RPC.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
