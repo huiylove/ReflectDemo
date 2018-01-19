@@ -21,6 +21,7 @@ public class TestQueue {
     private List thingsList = new ArrayList();   
     private final ReentrantLock lock = new ReentrantLock(true);  
     BlockingQueue q = new ArrayBlockingQueue(10);  
+    
     /** 
      * Éú²ú 
      * @param thing 

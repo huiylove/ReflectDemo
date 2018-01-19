@@ -22,6 +22,7 @@ public class Context {
 		}
 	}
 
+
 	public void ContextInterface(){
 		strategy.AlgorithmInterface();
 	}

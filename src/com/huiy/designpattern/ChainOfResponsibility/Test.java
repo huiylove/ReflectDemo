@@ -1,4 +1,4 @@
-package com.huiy.designpattern.ChainOfResponsibility;
+package com.huiy.designpattern.chainofresponsibility;
 /** 
  * Àà¹¦ÄÜÃèÊö
  * @author : yuanhui 

@@ -8,6 +8,7 @@ package com.huiy.designpattern.template;
  *
  */
 public abstract class TestPaper {
+	
 	public void question1(){
 		System.out.println("1.ÎÊÌâ1");
 		System.out.println("´ğ°¸:"+answer1());
@@ -20,5 +21,6 @@ public abstract class TestPaper {
 	
 	protected abstract String answer1();
 	protected abstract String answer2();
+	
 
 }

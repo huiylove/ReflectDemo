@@ -5,7 +5,6 @@ package com.huiy.designpattern.abstractfactory;
  * @date   : 2017Äê4ÔÂ1ÈÕ
  * @version 1.0
  *
- *
  */
 public interface PizzaIngredientFactory {
 

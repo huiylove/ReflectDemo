@@ -1,5 +1,8 @@
 package com.huiy.designpattern.observeexam;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 /** 
  * ¿‡π¶ƒ‹√Ë ˆ
@@ -12,12 +15,15 @@ package com.huiy.designpattern.observeexam;
 public class Test {
 
 	public static void main(String[] args) {
-		ExceptionWarn exceptionWarn = new ExceptionWarn();
+		ExceptionSubject exceptionWarn = new ExceptionSubject();
 		EmailWarn emailWarn = new EmailWarn();
 		MessageWarn messageWarn = new MessageWarn();
 		exceptionWarn.registerObserver(emailWarn);
 		exceptionWarn.registerObserver(messageWarn);
 		exceptionWarn.notifyObserver();
+		
+		ArrayList list = new ArrayList();
+		Iterator it = list.iterator();
 	}
 
 }

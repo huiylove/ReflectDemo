@@ -11,5 +11,6 @@ public class Client {
 	 public static void main(String[] args) {  
 	        Facede facade = new Facede();  
 	        facade.test();  
+	        
 	    }  
 }

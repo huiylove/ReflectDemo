@@ -8,6 +8,7 @@ package com.huiy.designpattern.abstractfactory;
  *
  */
 public abstract class PizzaStore {
+	
     public Pizza orderPizza(String type){  
     	Pizza pizza;  
         pizza = createPizza(type);  
@@ -19,3 +20,5 @@ public abstract class PizzaStore {
     public abstract Pizza createPizza(String type);	
 
 }
+
+

@@ -10,7 +10,7 @@ package com.huiy.designpattern.abstractfactory;
 public class Test {
 	
 	public static void main(String[] args){
-		NYStylesPizzaStore ny = new NYStylesPizzaStore();
+		PizzaStore ny = new NYPizzaStore();
 		ny.orderPizza("cheese");
 	}
 	

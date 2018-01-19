@@ -11,7 +11,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AddFactory factory = new AddFactory();
+		IFactory factory = new AddFactory();
 		Operate operate = factory.createOperate();
 		operate.setNumber1(1);
 		operate.setNumber2(2);
