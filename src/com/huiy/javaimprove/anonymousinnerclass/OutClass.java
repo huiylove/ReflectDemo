@@ -16,7 +16,8 @@ public class OutClass {
 			 this.name_ = name;
 		 }
 		 
-		 public String getName(){
+		 @Override
+		public String getName(){
 			 return name_;
 		 }
 	  };

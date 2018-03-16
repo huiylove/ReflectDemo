@@ -12,7 +12,8 @@ public class B extends A{
 	        return ("B and B");  
 	 }  
 	      
-     public String show(A obj){  
+     @Override
+	public String show(A obj){  
         return ("B and A");  
      }   
 }

@@ -12,13 +12,15 @@ public class Son {
      * 内部类继承Father类 
      */  
     class Father_1 extends Father{  
-        public int strong(){  
+        @Override
+		public int strong(){  
             return super.strong() + 1;  
         }  
     }  
       
     class Mother_1 extends Mother{  
-        public int kind(){  
+        @Override
+		public int kind(){  
             return super.kind() - 2;  
         }  
     }  

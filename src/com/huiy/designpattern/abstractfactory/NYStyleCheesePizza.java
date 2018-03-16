@@ -26,7 +26,8 @@ public class NYStyleCheesePizza extends Pizza{
      * 实现prepare方法 
      * prepare 方法一步一步地创建芝士比萨，每当需要原料时，就跟工厂要 
      */  
-    public void prepare() {  
+    @Override
+	public void prepare() {  
         System.out.println("Prepareing " + name);
         //调用工厂的方法
         

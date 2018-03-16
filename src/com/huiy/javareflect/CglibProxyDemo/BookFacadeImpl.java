@@ -11,4 +11,12 @@ public class BookFacadeImpl {
    public void addBook(){
 	   System.out.println("新增图书....");
    }
+   
+   public static void readBook(){
+	   System.out.println("读图书....");
+   }
+   
+   public final void printBookName(String name){
+	   System.out. println(name);
+   }
 }

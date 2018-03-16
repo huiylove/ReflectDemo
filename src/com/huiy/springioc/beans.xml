@@ -2,9 +2,9 @@
   
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"  
   "http://www.springframework.org/dtd/spring-beans.dtd">  
+     
 <beans>
-<!--     <context:component-scan base-package="com.huiy.*" />   -->
-    
+
     <bean id="Person" class="com.huiy.springioc.Person">
         <property name="name">
             <value>小龙</value>
@@ -16,7 +16,10 @@
             <ref local="Grade"/><!-- 这里指向了本配置文件里面一个名字叫Grade(即id=Grade)的bean -->
         </property>  
     </bean>  
-    <bean id="Grade" class="com.huiy.springioc.Grade">
+    
+       
+   <!--<bean id="Grade" class="com.huiy.springioc.Grade" init-method="initMethod" destroy-method="destroyMethod">  -->
+    <bean id="Grade" class="com.huiy.springioc.Grade"> 
         <property name="math">  
             <value>99</value>  
         </property>  
@@ -25,6 +28,7 @@
         </property>  
     </bean>  
     
+<!--     <bean class="com.huiy.springioc.LifeCyCleBeanProcessor"/> -->
     
      <bean id="javaCollection" class="com.huiy.springioc.JavaCollection">
         <property name="customList">
@@ -51,7 +55,5 @@
 		<property name="maxPoolSize" value="30" />
 		<property name="queueCapacity" value="5" />
 	</bean>
-	
-	
     
 </beans>  

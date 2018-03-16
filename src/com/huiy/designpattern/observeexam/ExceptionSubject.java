@@ -14,9 +14,14 @@ import java.util.List;
  */
 public class ExceptionSubject implements Subject{
 	
-    private List<Observer> observers = new ArrayList<Observer>();;  
+    private List<Observer> observers;  
 
 
+    public ExceptionSubject(){
+    	observers = new ArrayList<Observer>();
+    }
+    
+    
 	@Override
 	public void registerObserver(Observer observer) {
 		observers.add(observer);		

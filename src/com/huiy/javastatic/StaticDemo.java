@@ -13,13 +13,12 @@ public class StaticDemo {
         try {
         	//加载类  -- JVM查找并加载指定的类
 			Class<?> classType = Class.forName("com.huiy.javastatic.StaticTest");
-			//实例化-- 类创建对象的过程
 			System.out.println("-----");
 			
 //	        Class.forName("com.huiy.javastatic.StaticTest",true,StaticDemo.class.getClassLoader());  
-
+			//实例化-- 类创建对象的过程
 			StaticTest st = (StaticTest)classType.newInstance();
-			st.show();
+			StaticTest.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}  

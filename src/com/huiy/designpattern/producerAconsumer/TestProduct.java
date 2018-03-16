@@ -15,7 +15,8 @@ public class TestProduct implements Runnable{
         this.obj=tq;  
     }  
       
-    public void run() {  
+    @Override
+	public void run() {  
         for(int i=0;i<10;i++){  
             try {  
                 obj.product("test"+i);  

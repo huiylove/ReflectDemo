@@ -29,18 +29,21 @@ public class Test {
         Test test = new Test();
         test.test(new Bird() {  
             
-              public int fly() {  
+              @Override
+			public int fly() {  
             	  return 10000;  
               }  
 	            
-	          public String getName() {  
+	          @Override
+			public String getName() {  
 	              return "´óÑã";  
 	          }
          });
         
         test.testFly(new CanFly(){
         	
-        	public String fly() {  
+        	@Override
+			public String fly() {  
           	  return "ÓÃ³á°ò·É";  
             } 
         });

@@ -31,6 +31,7 @@ public class Rental {
 	 * @return
 	 * @deprecated Use {@link com.huiy.refactor.demo.MovieOld#getCharge()} instead
 	 */
+	@Deprecated
 	public double getCharge() {
 		return movie.getCharge(daysRented);
 	}
@@ -39,6 +40,7 @@ public class Rental {
 	/**
 	 * @deprecated Use {@link com.huiy.refactor.demo.MovieOld#getFrequentRenterPoints()} instead
 	 */
+	@Deprecated
 	public int getFrequentRenterPoints(){
 		return movie.getFrequentRenterPoints(daysRented);
 	}

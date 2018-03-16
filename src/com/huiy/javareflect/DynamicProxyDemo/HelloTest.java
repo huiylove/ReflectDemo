@@ -23,9 +23,15 @@ public class HelloTest {
 //		rsub.getClass().getInterfaces();
 //      HelloHandler  hellohandler = new HelloHandler();
 //		Subject proxySubject = (Subject) hellohandler.getProxy(rsub);
+        
         proxySubject.hello();
-        System.out.println("ProxyClass:"+proxySubject.getClass()+"SuperClass:"+proxySubject.getClass().getSuperclass());
-        createProxyClassFile();   
+        try {
+			Class.forName("com.huiy.javareflect.DynamicProxyDemo.Subject").getMethod("hello", new Class[0]).invoke(rsub, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//        System.out.println("ProxyClass:"+proxySubject.getClass()+"SuperClass:"+proxySubject.getClass().getSuperclass());
+//        createProxyClassFile();   
 	}
 	
 	

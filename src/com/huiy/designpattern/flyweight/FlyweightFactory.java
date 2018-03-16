@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class FlyweightFactory {
 	
-private Map<Character,Flyweight> files = new HashMap<Character,Flyweight>();
+    private Map<Character,Flyweight> files = new HashMap<Character,Flyweight>();
 
 	/**
 	 * 复合享元工厂方法

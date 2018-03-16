@@ -17,7 +17,9 @@ public class Proxy implements Subject{
 	
 	@Override
 	public void show() {
+		System.out.println("实现方法前---");
 		rs.show();
+		System.out.println("实现方法后---");
 	}
 
 }

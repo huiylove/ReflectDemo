@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  *
  */
-public class Person implements Serializable{//implements Cloneable{
+public class Person implements Serializable{
 	 /** ÐÕÃû **/  
     private String name;  
       
@@ -45,7 +45,7 @@ public class Person implements Serializable{//implements Cloneable{
 //    protected Person clone() {  
 //        Person person = null;  
 //        try {  
-//            person = (Person) super.clone();  
+//            person = (Person) super.clone();
 //            person.setEmail(new Email(person.getEmail().getTitle(),person.getEmail().getContent()));  
 //        } catch (CloneNotSupportedException e) {  
 //            e.printStackTrace();  

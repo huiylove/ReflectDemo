@@ -14,7 +14,8 @@ public class TestConsumer implements Runnable{
         this.obj=tq;  
     }  
   
-    public void run() {               
+    @Override
+	public void run() {               
         try {  
             for(int i=0;i<10;i++){  
                 obj.consumer();  

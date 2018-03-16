@@ -9,7 +9,7 @@ package com.huiy.javastatic;
  */
 public class MemberClass {
 	
-	  private static MemberClass MemberClass;
+//	  private static MemberClass MemberClass;
 	  
 	  private MemberClass(){}
 	  
@@ -28,7 +28,7 @@ public class MemberClass {
       }
       
       public static void main(String[] args){
-//    	  StaticMemberClassInner staticClass = new StaticMemberClassInner();
+    	  StaticMemberClassInner staticClass = new StaticMemberClassInner();
     	  NostaticMemberClass nostaticClass =  getInstance().new NostaticMemberClass();
     	  nostaticClass.sayHello();
       }

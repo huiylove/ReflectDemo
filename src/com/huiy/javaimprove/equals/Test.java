@@ -32,6 +32,7 @@ public class Test {
 	}
 	
 	//覆写equals时推荐使用getClass进行类型判断。而不是使用instanceof
+	@Override
 	public boolean equals(Object object){  
         if(object.getClass() == Test.class){//(object instanceof Test){  
         	Test p = (Test) object;  

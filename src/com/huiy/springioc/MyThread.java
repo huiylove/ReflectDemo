@@ -20,7 +20,8 @@ public class MyThread extends Thread{
     public void run() {
         System.out.println(Thread.currentThread().getName() + "正在执行任务"+taskNum);
         try {
-			Thread.currentThread().sleep(3000);
+			Thread.currentThread();
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			System.out.println(Thread.currentThread().getName()+"被中断");
 			this.interrupt();

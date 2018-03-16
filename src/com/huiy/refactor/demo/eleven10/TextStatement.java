@@ -9,14 +9,17 @@ package com.huiy.refactor.demo.eleven10;
  */
 public class TextStatement extends Statement{
 	
-	 String headString(Customer acustomer){
+	 @Override
+	String headString(Customer acustomer){
 		return  "Rental Record for "+acustomer.getName()+"\n";
 	}
 	 
+	@Override
 	String eachRentalString(Rental each){
 		return "\t"+each.getMovie().getTitle()+"\t"+String.valueOf(each.getCharge())+"\n";
 	}
 	
+	@Override
 	String footerString(Customer acustomer){
 		return "Amount owed is "+String.valueOf(acustomer.getTotalCharge())+"\n"+
 				"You earned "+String.valueOf(acustomer.getTotalFrequentRenterPoints())+" frequent renter pointer";

@@ -42,5 +42,16 @@ public class Test {
 //          JavaProperties jp = (JavaProperties)context.getBean("adminUser");
 //          Properties email = jp.getEmail();
 //          System.out.println(email.getProperty("admin"));
+        Test test = new Test();
+        test.instatiateMethod();
 	  }  
+	 
+	 public static void staticMethod(){
+		Test test = new Test();
+	    test.instatiateMethod();
+	 }
+	 
+	  public void instatiateMethod(){
+		  System.out.println("dddd");
+	  }
 }

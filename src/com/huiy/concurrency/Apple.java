@@ -1,5 +1,10 @@
 package com.huiy.concurrency;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Vector;
+
 
 
 /** 
@@ -36,6 +41,7 @@ public class Apple extends Fruit {
 //		}
 //	}
 	
+	@Override
 	public synchronized void eat(){
         System.out.println(Thread.currentThread().getName() +" run begin ");
 	 	System.out.println("Apple taste good!");
@@ -89,24 +95,24 @@ public class Apple extends Fruit {
 	
 	public static void main(String[] args){
 		//同步代码块—内置锁——方法调用所在的对象
-//		new Thread(){
-//			public void run() {
-//				try {
-//					getInstance().eat();
-//					Thread.sleep(5000);
-//			        System.out.println(Thread.currentThread().getName() + " run end");
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}.start();
-//		
-//		new Thread(){
-//			public void run() {
-//				getInstance().eat();
-//		        System.out.println(Thread.currentThread().getName() +" run end");
-//			}
-//		}.start();
+		new Thread(){
+			public void run() {
+				try {
+					getInstance().eat();
+					Thread.sleep(5000);
+			        System.out.println(Thread.currentThread().getName() + " run end");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}.start();
+		
+		new Thread(){
+			public void run() {
+				getInstance().eat();
+		        System.out.println(Thread.currentThread().getName() +" run end");
+			}
+		}.start();
 		
 		//同步代码块—内置锁—静态方法以Class对象为锁
 //		new Thread(){
@@ -130,8 +136,8 @@ public class Apple extends Fruit {
 		//同步代码块—有些耗时的计算或操作，比如网络或控制台IO，难以快速完成，执行这些操作期间不要占有锁
 //		new Thread(){
 //			public void run() {
-////				Apple a = new Apple();
-////				a.service(5);
+//				Apple a = new Apple();
+//				a.service(5);
 //				getInstance().service(5);
 //		        System.out.println(Thread.currentThread().getName() + " run end");
 //			}
@@ -158,22 +164,27 @@ public class Apple extends Fruit {
 		//如果一个类中定义了一个synchronized的static函数A，
 		//也定义了一个synchronized的instance函数B，那么这个类的同一对象Obj,
 		//在多线程中分别访问A和B两个方法时，不会构成同步，因为它们的锁都不一样。
-		//A方法的锁是Obj这个对象，而B的锁是Obj所属的那个Class。
+		//A方法的锁是Obj所属的那个Class，而B的锁是Obj这个对象。
 
 
-		new Thread(){
-			public void run() {
-				getInstance().eat();
-		        System.out.println(Thread.currentThread().getName() + " run end");
-			}
-		}.start();
-		
-		new Thread(){
-			public void run() {
-				grow();
-		        System.out.println(Thread.currentThread().getName() + " run end");
-			}
-		}.start();
+//		new Thread(){
+//			@Override
+//			public void run() {
+//				getInstance().eat();
+//		        System.out.println(Thread.currentThread().getName() + " run end");
+//			}
+//		}.start();
+//		
+//		new Thread(){
+//			@Override
+//			public void run() {
+//				grow();
+//		        System.out.println(Thread.currentThread().getName() + " run end");
+//			}
+//		}.start();
+//		Apple a = new Apple();
+//		Apple b = new Apple();
+//		System.out.println((a.getClass()==b.getClass())+"--"+(a.getClass()==Apple.class));
 	}
 }
 	

@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.HashMap;
-
 /** 
  * 类功能描述
  * @author : yuanhui 
@@ -28,13 +27,13 @@ public class JdbcDemo {
 			Statement statement=null;
 			String sql = "insert into user_t(user_name,password) values('hello','world')";
 			try{ 
-	            Class.forName(DRIVER);  //加载驱动到JVM,并不需要实例化这个驱动
+	            Class.forName(DRIVER);  
 	        }catch(ClassNotFoundException e){
 	            e.printStackTrace() ;
 	        }
 			conn = DriverManager.getConnection(URL,USER,PASSWORD);
 			/*Statement*/
-			/*
+			/* 通用查询
 			 * statement - 不推荐，这个需要完整的sql语句
 			   statement=conn.createStatement();
 //			   statement.executeUpdate(sql);
@@ -52,8 +51,16 @@ public class JdbcDemo {
 			
 			/*PreparedStatement*/
 			/*
+			 * 预处理查询  http://www.importnew.com/5006.html
+			 * 1.参数化的查询
 			 * 是先在数据表中准备好了一条SQL语句，但是此SQL语句的具体内容暂时不设置，
 			 * 而是之后在进行设置，即占住此位置等待用户设置
+			 * 2.性能优
+			 * SQL语句会预编译在数据库系统中
+			 * 数据库对SQL语句的分析，编译，优化已经在第一次查询前完成了
+			 * 3.防止sql注入
+			 * 不会将参数的内容视为SQL指令的一部分来处理，而是在数据库完成SQL指令的编译后，才套用参数运行
+			 *   
 			 */
 			PreparedStatement pStatement =null;
 			String psql = "insert into user_t(user_name,password) values(?,?)";
@@ -63,7 +70,9 @@ public class JdbcDemo {
 			pStatement.executeUpdate();	
 			/*PreparedStatement*/
 
-			/*CallableStatement*/
+			/*CallableStatement
+			 * 存储过程查询
+			 * */
 			String csql="{call newproc(?,?,?)}";
 			CallableStatement cstmt = conn.prepareCall(csql);
 			cstmt.setInt(1,70);

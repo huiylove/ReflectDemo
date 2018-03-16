@@ -35,7 +35,8 @@ public class Monkey implements Cloneable,Serializable {
     /**
      * ¿ËÂ¡·½·¨
      */
-    public Object clone(){
+    @Override
+	public Object clone(){
         Monkey temp = null;
         try {
             temp = (Monkey) super.clone();

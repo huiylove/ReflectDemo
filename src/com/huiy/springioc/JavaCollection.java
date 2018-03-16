@@ -2,8 +2,6 @@ package com.huiy.springioc;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
 /** 
  * Àà¹¦ÄÜÃèÊö
  * @author : yuanhui 

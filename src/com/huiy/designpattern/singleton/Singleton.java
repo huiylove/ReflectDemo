@@ -24,6 +24,7 @@ public class Singleton {
 	
 
 	//双重校验锁
+	//可能会出现指令重排序，得到一个未初始化完成的对象
 //	public static Singleton getInstance(){
 //		if(instance==null){
 //			synchronized(Singleton.class){
@@ -43,5 +44,9 @@ public class Singleton {
 //	public static final Singleton getInstance(){
 //		return SingletonHolder.INSTANCE;
 //	}
+	
+	public static void main(String[] args){
+		EnumSingleton.whateverMethod().EnumPrint();
+	}
 	
 }

@@ -91,11 +91,11 @@ public class ClassGetMethod {
 	     {  
 		    System.out.println(c);  
 	     } 
-
+		 
 		 System.out.println();  
 		 
 		 /* getConstructors返回的是申明为public的构造函数
-		    getDeclaredMethods返回的是指定类定义的所有定义的构造函数
+		    getDeclaredConstructors返回的是指定类定义的所有的构造函数
 		 */
 		 
          //5.创建新类的实例	- 通过反射机制
@@ -136,6 +136,16 @@ public class ClassGetMethod {
 		 System.out.println(strFiled.get(inst));
 
 		 
+		 //8.获取类的接口
+		 Class<?>[] interfaces = classType.getInterfaces();
+		 for (Class<?> c : interfaces)  
+		 {  
+			    System.out.println(c);  
+		 } 
+	
+		 System.out.println();  
+		 
+
 	}
 
 }

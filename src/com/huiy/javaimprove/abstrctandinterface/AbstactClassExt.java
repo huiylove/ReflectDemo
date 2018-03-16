@@ -8,6 +8,7 @@ package com.huiy.javaimprove.abstrctandinterface;
  *
  */
 public abstract class AbstactClassExt extends AbstractClass implements ActionInterface{
+	@Override
 	public abstract void A();
 	
 	public void B(){

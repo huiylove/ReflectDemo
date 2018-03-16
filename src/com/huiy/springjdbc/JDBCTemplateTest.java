@@ -29,6 +29,7 @@ public class JDBCTemplateTest {
 	 	jdbcTemplate = new JdbcTemplate(dataSource); 
 	 } 
 	 
+	 
 	 @Test
 	 public void test() { 
 		 //1.ÉùÃ÷SQL 

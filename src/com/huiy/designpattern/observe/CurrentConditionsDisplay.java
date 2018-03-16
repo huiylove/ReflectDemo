@@ -19,7 +19,8 @@ public class CurrentConditionsDisplay implements Observer,DisplayElement{
         weatherData.registerObserver(this);      //×¢²á¹Û²ìÕß  
     }  
       
-    public void update(float temp, float humidity, float pressure) {  
+    @Override
+	public void update(float temp, float humidity, float pressure) {  
         this.temperature = temp;  
         this.humidity = humidity;  
         this.pressure = pressure;  

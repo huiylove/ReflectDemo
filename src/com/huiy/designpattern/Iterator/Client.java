@@ -1,8 +1,5 @@
 package com.huiy.designpattern.Iterator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /** 
  * Àà¹¦ÄÜÃèÊö
  * @author : yuanhui 

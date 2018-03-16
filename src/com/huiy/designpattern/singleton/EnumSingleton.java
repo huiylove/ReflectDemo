@@ -9,7 +9,12 @@ package com.huiy.designpattern.singleton;
  */
 public enum EnumSingleton {
 	INSTANCE;  
-    public EnumSingleton whateverMethod() {  
+	
+    public static EnumSingleton whateverMethod() {  
     	return EnumSingleton.INSTANCE;
     }  
+    
+    public void EnumPrint(){
+    	System.out.println("ddd");
+    }
 }
