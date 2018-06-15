@@ -16,9 +16,34 @@ extends AbstractMap<K,V>
 implements Map<K,V>{
  
 	static final int DEFAULT_INITIAL_CAPACITY = 16;
+	static final int MAXIMUM_CAPACITY = 1 << 30;
+    static final float DEFAULT_LOAD_FACTOR = 0.75f;
+
     transient Entry[] table;
     transient int size;
     int threshold;
+    final float loadFactor;
+    
+    public HashMapSourceCode(int initialCapacity, float loadFactor) {
+        if (initialCapacity < 0)
+            throw new IllegalArgumentException("Illegal initial capacity: " +
+                                               initialCapacity);
+        if (initialCapacity > MAXIMUM_CAPACITY)
+            initialCapacity = MAXIMUM_CAPACITY;
+        if (loadFactor <= 0 || Float.isNaN(loadFactor))
+            throw new IllegalArgumentException("Illegal load factor: " +
+                                               loadFactor);
+
+        // Find a power of 2 >= initialCapacity
+        int capacity = 1;
+        while (capacity < initialCapacity)
+            capacity <<= 1;
+
+        this.loadFactor = loadFactor;
+        threshold = (int)(capacity * loadFactor);
+        table = new Entry[capacity];
+//        init();
+    }
 	
     
     public V put(K key,V value){
@@ -88,8 +113,38 @@ implements Map<K,V>{
 	}
 	
 	void resize(int newCapacity){
-		
+		Entry[] oldTable = table;  
+        int oldCapacity = oldTable.length;  
+        if (oldCapacity == MAXIMUM_CAPACITY) {  
+            threshold = Integer.MAX_VALUE;  
+            return;  
+        }  
+        Entry[] newTable = new Entry[newCapacity];  
+        transfer(newTable);//可能导致环链  
+        table = newTable;  
+        threshold = (int)(newCapacity * loadFactor);  
 	}
+	
+	void transfer(Entry[] newTable) {  
+	    Entry[] src = table;  
+	    int newCapacity = newTable.length;  
+	    for (int j = 0; j < src.length; j++) {  
+	        Entry<K,V> e = src[j];  
+	        if (e != null) {  
+	            src[j] = null;  
+	            do {  
+	                Entry<K,V> next = e.next;  
+	                int i = indexFor(e.hash, newCapacity);  
+	                e.next = newTable[i];  
+	                newTable[i] = e;  
+	                e = next;  
+	            } while (e != null);  
+	        }  
+	    }  
+	}  
+	
+	
+	
 	
 	static int hash(int hashCode){
 		return hashCode;

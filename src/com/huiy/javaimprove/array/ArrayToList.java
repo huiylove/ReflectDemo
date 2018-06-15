@@ -1,6 +1,7 @@
 package com.huiy.javaimprove.array;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /** 
@@ -23,5 +24,6 @@ public class ArrayToList {
             System.out.println(list.get(i));  
 
         }
+        list.toArray();
     }  
 }

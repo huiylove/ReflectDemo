@@ -26,17 +26,20 @@ public class ProxyFactory implements MethodInterceptor{
 		Enhancer enhancer = new Enhancer();    
         enhancer.setSuperclass(target.getClass());    
         // 回调方法    
-        enhancer.setCallback(new MethodInterceptor(){
-        	
-			@Override
-			public Object intercept(Object arg0, Method arg1, Object[] arg2,
-					MethodProxy arg3) throws Throwable {
-				System.out.print("开始事物");
-				arg1.invoke(arg1, arg2);
-				System.out.print("结束事物");
-				return null;
-			}
-        });    
+        enhancer.setCallback(
+//        		new MethodInterceptor(){
+////        	
+//			@Override
+//			public Object intercept(Object arg0, Method arg1, Object[] arg2,
+//					MethodProxy arg3) throws Throwable {
+//				System.out.print("开始事物");
+//				arg1.invoke(arg0, arg2);
+//				System.out.print("结束事物");
+//				return null;
+//			}
+//        }
+        		this
+	);    
         // 创建代理对象    
         return enhancer.create();   	
 	}
@@ -45,9 +48,9 @@ public class ProxyFactory implements MethodInterceptor{
 	@Override
 	public Object intercept(Object arg0, Method arg1, Object[] arg2,
 			MethodProxy arg3) throws Throwable {
-		System.out.println("开始事物");
+		System.out.println("开始事物----");
 		arg3.invokeSuper(arg0, arg2);
-		System.out.println("结束事物");
+		System.out.println("结束事物----");
         return null;    
 	}
 	

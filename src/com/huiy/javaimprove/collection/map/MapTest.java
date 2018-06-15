@@ -14,18 +14,49 @@ public class MapTest {
 	static volatile int count;
 	
 	public static void main(String[] args) {
-		for(int i=0;i<100;i++){
-			new Thread(){
-				@Override
-				public void run() {
-					addCount();
+//		for(int i=0;i<100;i++){
+//			new Thread(){
+//				@Override
+//				public void run() {
+//					addCount();
+//					hashMap.put(String.valueOf(count),count);
+//					System.out.println(Thread.currentThread().getName()+"运行"+count+"---"+hashMap.size());
+////					count++;
+//				}
+//	    	}.start();
+//		}
+		new Thread(){
+			@Override
+			public void run() {
+				for(int i=0;i<5000;i++){
 					hashMap.put(String.valueOf(count),count);
-					System.out.println(Thread.currentThread().getName()+"运行"+count+"---"+hashMap.size());
-//					count++;
 				}
-	    	}.start();
-		}
-	   System.out.println("main方法结束");
+//				count++;
+			}
+		}.start();
+		
+		new Thread(){
+			@Override
+			public void run() {
+				for(int i=0;i<5000;i++){
+					hashMap.put(String.valueOf(count),count);
+				}
+//				count++;
+			}
+		}.start();
+		
+		
+		new Thread(){
+			@Override
+			public void run() {
+				for(int i=0;i<5000;i++){
+					hashMap.put(String.valueOf(count),count);
+				}
+//				count++;
+			}
+		}.start();
+//	   System.out.println("main方法结束");
+		
 	}
 	
 	public synchronized static void addCount(){

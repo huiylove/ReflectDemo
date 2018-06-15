@@ -1,6 +1,6 @@
 package com.huiy.JMM;
 
-import com.huiy.concurrency.Apple;
+import com.huiy.concurrency.thread.sychronized.Apple;
 
 /** 
  * @author : yuanhui 

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.Stack;
@@ -22,6 +24,8 @@ public class CollectionDemo {
 	public static void main(String[] args) {
 		//如果我们明确所插入元素的多少，最好指定一个初始容量值，避免过多的进行扩容操作而浪费时间、效率
 		List alist = new ArrayList(10);
+		List linkedlist = new LinkedList();//Entry<E>
+
 		Iterator it = alist.iterator();
 		if(it.hasNext()){
 			System.out.println(it.next());
@@ -29,6 +33,7 @@ public class CollectionDemo {
 		
 		Set<String> set = new HashSet<String>();
 		set.add("a");
+		Set<String> linkedSet = new LinkedHashSet<String>();
 		
 		
 		Stack s = new Stack();

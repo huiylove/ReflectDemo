@@ -22,9 +22,9 @@ public class RpcExporter {
 	
 	static Executor executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 	
-	public static void exporter(String hostName,int post) throws IOException{
+	public static void exporter(String hostName,int port) throws IOException{
 		ServerSocket server = new ServerSocket();
-		server.bind(new InetSocketAddress(hostName,post));
+		server.bind(new InetSocketAddress(hostName,port));
 		try{
 			while(true){
 				executor.execute(new ExporterTask(server.accept()));

@@ -40,8 +40,7 @@ public class OutClass {
 		public StaticInnerClass(){
 			System.out.println("静态内部类的构造器");
 		}
-		
-		
+
 	}
 	
      public class InnerClass{

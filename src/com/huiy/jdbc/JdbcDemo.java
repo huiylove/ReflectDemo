@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.HashMap;
+import com.mysql.jdbc.Driver;
 /** 
  * 类功能描述
  * @author : yuanhui 
@@ -55,7 +56,7 @@ public class JdbcDemo {
 			 * 1.参数化的查询
 			 * 是先在数据表中准备好了一条SQL语句，但是此SQL语句的具体内容暂时不设置，
 			 * 而是之后在进行设置，即占住此位置等待用户设置
-			 * 2.性能优
+			 * 2.性能优化
 			 * SQL语句会预编译在数据库系统中
 			 * 数据库对SQL语句的分析，编译，优化已经在第一次查询前完成了
 			 * 3.防止sql注入

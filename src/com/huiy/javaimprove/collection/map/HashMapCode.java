@@ -93,7 +93,7 @@ public class HashMapCode<K,V> implements Map<K,V>{
 		
 	}
 	
-	 @Override
+	@Override
 	public V put(K key, V value) {
 	        if (key == null)
 	            return putForNullKey(value);
@@ -112,8 +112,32 @@ public class HashMapCode<K,V> implements Map<K,V>{
 	        modCount++;
 	        addEntry(hash, key, value, i);
 	        return null;
-	   }
+	}
 	 
+	public V getDemo(K key) {
+	        if (key == null)
+	            return getForNullKey();
+	        int hash = hash(key.hashCode());
+	        int i = indexFor(hash, table.length);
+	        for (Entry<K,V> e = table[i]; e != null; e = e.next) {
+	            Object k;
+	            if (e.hash == hash && ((k = e.key) == key || key.equals(k))) {
+	                return e.value;
+	            }
+	        }
+	        return null;
+	   }
+	
+	
+	   public V getForNullKey(){
+		   for (Entry<K,V> e = table[0]; e != null; e = e.next) {
+	            if (e.key == null) {
+	                return e.value;
+	            }
+	        }
+		    return null;
+	   }
+	   
 	   static int hash(int h) {
 	        // This function ensures that hashCodes that differ only by
 	        // constant multiples at each bit position have a bounded
