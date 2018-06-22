@@ -46,7 +46,6 @@
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/keyLoader.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/mina-core-2.0.10.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/mysql-connector-java-5.1.34.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/netty-3.7.0.Final.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/notify.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/org.springframework.transaction-3.2.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/poi-3.7.jar"/>
@@ -65,5 +64,6 @@
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmlbeans-2.3.0.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/XmlSchema-1.4.5.jar"/>
 	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmlschema-core-2.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/io/netty/netty-all/4.1.0.Final/netty-all-4.1.0.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -26,12 +26,14 @@ public class SemaphoreDemo {
 				@Override
 				public void run() {
 					try {
+						//获取信号量
 						semaphore.acquire();
 						System.out.println("用户"+user+"正在窗口买票");
 						Thread.sleep((long)Math.random()*10000);
 						System.out.println("用户"+user+"买完票，准备离开");
 						Thread.sleep((long)Math.random()*10000);
 						System.out.println("用户"+user+"已经离开");
+						//释放信号量
 						semaphore.release();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
