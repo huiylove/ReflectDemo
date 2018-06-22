@@ -11,6 +11,9 @@ import java.util.concurrent.Executors;
  * @author : yuanhui 
  * @date   : 2018年6月14日
  * @version : 1.0
+ * CountDownLatch
+ * 倒计时计数器
+ * 任务必须等待其他任务执行完后才能执行
  */
 public class NoLockOrder {
 	
@@ -24,10 +27,10 @@ public class NoLockOrder {
 						public void run() {
 							try {
 								latch.await();
-							} catch (InterruptedException e) {
+								System.out.printf("线程名%s订单号:%s \r\n",Thread.currentThread().getName(),getOrderNo());
+							} catch (Exception e) {
 								e.printStackTrace();
 							}
-							System.out.printf("线程名%s订单号:%s \r\n",Thread.currentThread().getName(),getOrderNo());
 						}
 				
 			});
@@ -37,7 +40,7 @@ public class NoLockOrder {
 	}
 	
 	static int num=0;
-	synchronized public static String getOrderNo(){
+    public static String getOrderNo(){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		return sdf.format(new Date())+num++;
 	}
