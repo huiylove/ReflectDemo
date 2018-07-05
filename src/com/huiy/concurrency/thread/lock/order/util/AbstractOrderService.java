@@ -20,7 +20,7 @@ public class AbstractOrderService implements OrderService{
 		return getOrderNo2();
 	};
 	
-	synchronized public static String getOrderNo2(){
+	public synchronized  static String getOrderNo2(){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		return sdf.format(new Date())+"-"+num++;
 	};

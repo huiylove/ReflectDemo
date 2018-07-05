@@ -44,22 +44,28 @@ public class LockTest {
 	    public static void main(String[] args) {
 
 	        //Ïß³Ì1
-	        Thread t1 = new Thread(new Runnable() {
+	        new Thread(new Runnable() {
 	            @Override
 	            public void run() {
 	                lockTest.method(Thread.currentThread());
 	            }
-	        }, "t1");
+	        }, "t1").start();
 
-	        Thread t2 = new Thread(new Runnable() {
+	        new Thread(new Runnable() {
 
 	            @Override
 	            public void run() {
 	                lockTest.method(Thread.currentThread());
 	            }
-	        }, "t2");
+	        }, "t2").start();
+	        
+	        new Thread(new Runnable() {
 
-	        t2.start();
-	        t1.start();
+	            @Override
+	            public void run() {
+	                lockTest.method(Thread.currentThread());
+	            }
+	        }, "t3").start();
 	    }
-	}
+	        
+}

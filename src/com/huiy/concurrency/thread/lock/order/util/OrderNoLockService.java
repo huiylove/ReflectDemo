@@ -9,15 +9,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author : yuanhui 
  * @date   : 2018年6月14日
  * @version : 1.0
+ * 
+ * 无锁
  */
-public class OrderLockService
-//extends AbstractOrderService 
+public class OrderNoLockService
 implements OrderService{
 	
 	static int num=0;
 
 	@Override
-	synchronized public String getOrderNo() {
+    public String getOrderNo() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		return sdf.format(new Date())+"-"+num++;
 	}

@@ -1,4 +1,4 @@
-package com.huiy.concurrency.thread.lock.order;
+package com.huiy.concurrency.thread.lock.order.automic;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

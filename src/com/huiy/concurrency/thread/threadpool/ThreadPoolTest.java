@@ -2,6 +2,7 @@ package com.huiy.concurrency.thread.threadpool;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -31,15 +32,15 @@ public class ThreadPoolTest {
 	@Test
 	public void pooltest() throws InterruptedException, ExecutionException
 	{
-//		Executor executor = Executors.newCachedThreadPool();
-//		//1、execute()不返回任何结果
-//		executor.execute(new Runnable(){
-//
-//			@Override
-//			public void run() {
-//				System.out.print("线程池执行");
-//			}
-//		});
+		Executor executor = Executors.newCachedThreadPool();
+		//1、execute()不返回任何结果
+		executor.execute(new Runnable(){
+
+			@Override
+			public void run() {
+				System.out.print("线程池执行");
+			}
+		});
 		
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		//1、 submit()方法可以接受Runnable和Callable接口的对象
