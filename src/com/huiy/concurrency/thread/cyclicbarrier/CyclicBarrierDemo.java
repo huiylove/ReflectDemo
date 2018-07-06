@@ -45,12 +45,11 @@ public class CyclicBarrierDemo {
 						Thread.sleep((long)Math.random()*10000);
 						System.out.println(user+"达到聚餐点,当前已有，"+(cb.getNumberWaiting()+1)+"达到");
 						//阻塞
-						cb.await();
+						cb.await(); 
 						
-						if(user==2){
-//							System.out.println("全员已到齐，开始吃饭");
+//						if(user==3){//不加此条件判断，每个人都会执行一遍
 							System.out.println("拍照结束，开始吃饭");
-						}
+//						}
 						
 						Thread.sleep((long)Math.random()*10000);
 						System.out.println(user+"吃完饭了，准备回家");

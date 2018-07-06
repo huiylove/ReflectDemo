@@ -26,10 +26,10 @@ public class CuratorLock {
 	
 	public static void main(String[] args){
 		client.start();
-		InterProcessMutex lock = new InterProcessMutex(client,"/bit");
+		InterProcessMutex lock = new InterProcessMutex(client,"/bit");//mutex互斥锁
 		ExecutorService executorService = Executors.newCachedThreadPool();
 		final CountDownLatch latch =  new CountDownLatch(1);
-		//todo 不会重复s
+		//todo 不会重复
 		for(int i=0;i<20;i++){
 			OrderService orderService = new OrderLockService();
 			executorService.submit(new OrderTask2(latch,new OrderNoLockService(),lock));

@@ -23,12 +23,11 @@ public class OrderTask implements Runnable{
 	@Override
 	public void run() {
 		try {
-			latch.await();
+			latch.await();//同步点，倒计时计数器count为0,开始执行；
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		System.out.printf("线程名%s订单号:%s \r\n",Thread.currentThread().getName(),orderService.getOrderNo());
 	}
-
 
 }

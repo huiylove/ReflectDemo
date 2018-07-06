@@ -24,7 +24,10 @@ public class RedisOrder {
 		for(int i=0;i<10;i++){
 			executorService.submit(new OrderTask(latch,orderService));
 		}
+		/*main函数执行完后，线程池才开始异步执行代码*/
+//		System.out.println(Thread.currentThread().getName()+"执行前"+latch.getCount());
 		latch.countDown();
+//		System.out.println(Thread.currentThread().getName()+"执行后"+latch.getCount());
 		executorService.shutdown();
 	}
 		
