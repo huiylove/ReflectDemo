@@ -32,6 +32,7 @@ public class JedisTest {
 	public  void testKey()
 	{
 		jedis.set("huiylove","hope");
+		
 		assertTrue(jedis.exists("huiylove"));
 	}
 	

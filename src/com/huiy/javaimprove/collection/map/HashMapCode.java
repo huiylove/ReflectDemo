@@ -90,7 +90,6 @@ public class HashMapCode<K,V> implements Map<K,V>{
 		HashMap<String,Object> map = new HashMap<String,Object>();
 		map.put("apple",12);
 		map.remove("apple");
-		
 	}
 	
 	@Override

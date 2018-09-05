@@ -14,6 +14,6 @@ public class NodeB extends Node {
 
 
 	public void operationB(){
-		System.out.print("访问节点B");
+		System.out.println("访问节点B");
 	}
 }

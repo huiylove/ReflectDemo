@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0
  * 动态的单分配——动态分派仅仅会考虑到方法的接收者的类型
  * 静态的多分配——对重载方法的分派会考虑到方法的接收者的类型以及方法的所有参数的类型 
- * 一个方法根据两个宗量的类型来决定执行不同的代码，这就是“双重分派”
+ * 一个方法根据两个变量的类型来决定执行不同的代码，这就是“双重分派”
  */
 
 public class ObjectStructure {
@@ -34,4 +34,12 @@ public class ObjectStructure {
     public void add(Node node){
         nodes.add(node);
     }
+    
+    
+    public static void main(String[] args) {
+    	ObjectStructure os = new ObjectStructure();
+    	os.add(new NodeA());
+    	os.add(new NodeB());
+    	os.action(new VisitorA());
+	}
 }
