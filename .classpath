@@ -6,77 +6,45 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_75">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_191">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/slf4j/slf4j-log4j12/1.7.6/slf4j-log4j12-1.7.6.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/log4j/log4j/1.2.12/log4j-1.2.12.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-context/4.0.9.RELEASE/spring-context-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-expression/4.0.9.RELEASE/spring-expression-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-test/4.0.9.RELEASE/spring-test-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/junit/junit/4.11/junit-4.11.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-aop/4.0.9.RELEASE/spring-aop-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/org/springframework/spring-beans/4.0.9.RELEASE/spring-beans-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/axis2webapp.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/cglib-nodep-3.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/commons-beanutils-1.9.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/commons-collections-3.2.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/commons-httpclient-3.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/db2jcc4.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/dubbo-2.5.3.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/dubbo-parent.zip"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/ehcache-1.6.2.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/ehcache-core-2.6.8.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/fastjson-1.2.31.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/fpps-dubbo-jdk6-1.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/freemarker-2.3.20.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/fuiou_key_open_0.00.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/geronimo-stax-api_1.0_spec-1.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/gson-2.7.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/httpclient-4.2.2.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/httpcore-4.2.2.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/javassist-3.15.0-GA.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/jaxen-1.1-beta-6.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/jaxws-api-2.2.9.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/jmxri-1.2.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/jmxtools-1.2.1.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/junit-4.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/keyLoader.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/mina-core-2.0.10.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/mysql-connector-java-5.1.34.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/notify.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/org.springframework.transaction-3.2.4.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/poi-3.7.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/poi-ooxml-3.7.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/poi-ooxml-schemas-3.7.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/poi-scratchpad-3.7.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/slf4j-api-1.7.6.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-aop-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-beans-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-core-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-dao-2.0.8.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-jdbc-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/spring-web-4.0.9.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmap.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmemcached-2.0.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmlbeans-2.3.0.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/XmlSchema-1.4.5.jar"/>
-	<classpathentry kind="lib" path="E:/Eclipse/项目jar包/xmlschema-core-2.2.1.jar"/>
-	<classpathentry kind="lib" path="D:/devtools/mvnrepo2/io/netty/netty-all/4.1.0.Final/netty-all-4.1.0.Final.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/项目jar包/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/cglib-nodep-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/db2jcc4.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/ehcache-core-2.6.8.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/fastjson-1.2.31.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/httpclient-4.2.2.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/jedis-2.9.0.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/junit-4.0.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/mysql-connector-java-5.1.34.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/org.springframework.transaction-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/slf4j-api-1.7.6.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-aop-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-beans-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-context-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-context-support-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-core-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-expression-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-jdbc-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-orm-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-security-crypto-3.2.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-security-rsa-1.0.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-tx-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-web-4.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/xmemcached-2.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/spring-test-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/项目jar包/junit-4.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
