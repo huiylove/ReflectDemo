@@ -12,10 +12,10 @@ import java.util.concurrent.Executors;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ15ÈÕ
+ * @date   : 2018å¹´6æœˆ15æ—¥
  * @version : 1.0
  * 
- * ĞÔÄÜÓÅ»¯    ÏµÍ³×ÊÔ´  IO¡¢´æ´¢¡¢ÄÚ´æ¡¢CPU
+ * æ€§èƒ½ä¼˜åŒ–    ç³»ç»Ÿèµ„æº  IOã€å­˜å‚¨ã€å†…å­˜ã€CPU
  * 
  */
 public class TraditionalSocketServer {
@@ -24,22 +24,22 @@ public class TraditionalSocketServer {
 	public static void main(String[] args) throws IOException {
 		    ExecutorService threadPool = Executors.newCachedThreadPool();
 			ServerSocket server = new ServerSocket(7777);
-			System.out.println("·şÎñ¶ËÆô¶¯");
+			System.out.println("æœåŠ¡ç«¯å¯åŠ¨");
 			
 			while(true){
-			    final Socket client = server.accept();//×èÈûµã1
+			    final Socket client = server.accept();//é˜»å¡ç‚¹1
 				
 				threadPool.execute(new Runnable(){
 					
 
 					@Override
 					public void run() {
-						System.out.println("ĞÂµÄ¿Í»§¶ËµÄÁ¬½ÓÇëÇó");
+						System.out.println("æ–°çš„å®¢æˆ·ç«¯çš„è¿æ¥è¯·æ±‚");
 						try {
 							BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
 							PrintWriter out = new PrintWriter(client.getOutputStream(),true);
 							while(true){
-								String body = br.readLine();//×èÈûµã2
+								String body = br.readLine();//é˜»å¡ç‚¹2
 								if(body==null) break;
 								System.out.println("Server:"+body);
 				                out.println("hello,yuanhui!!!");
@@ -64,7 +64,7 @@ public class TraditionalSocketServer {
 //				out = new PrintWriter(client.getOutputStream(),true);
 //				String body ;
 //				while(true){
-//					body = br.readLine();//×èÈûµã2
+//					body = br.readLine();//é˜»å¡ç‚¹2
 //					if(body==null) break;
 //					System.out.println("Server:"+body);
 //	                out.println("hello,yuanhui!!!");

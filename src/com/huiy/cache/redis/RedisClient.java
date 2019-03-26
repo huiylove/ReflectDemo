@@ -3,12 +3,12 @@ package com.huiy.cache.redis;
 import redis.clients.jedis.Jedis;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ26ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½26ï¿½ï¿½
  * @version 1.0
  * 
- * ÊµÏÖ·Ö²¼Ê½Ëø
+ * Êµï¿½Ö·Ö²ï¿½Ê½ï¿½ï¿½
  * 
  */
 public class RedisClient {
@@ -18,14 +18,13 @@ public class RedisClient {
 	
 	public static void main(String[] args){
 		final Jedis jedis =  new Jedis("127.0.0.1");
-		
 		new Thread(new Runnable(){
 			@Override
 			public void run() {
 				if(jedis.setnx(GOODS_ID,Thread.currentThread().getId()+"")==1){
-					System.out.println(Thread.currentThread().getName()+"»ñÈ¡Ëø³É¹¦");
+					System.out.println(Thread.currentThread().getName()+"è·å–é”æˆåŠŸ");
 				}else{
-					System.out.println(Thread.currentThread().getName()+"»ñÈ¡ËøÊ§°Ü");
+					System.out.println(Thread.currentThread().getName()+"è·å–é”å¤±è´¥");
 				}
 				if(jedis.get(GOODS_ID).equals(Thread.currentThread().getId())){
 					jedis.del("lock_sale_0001");
@@ -34,33 +33,33 @@ public class RedisClient {
 		}).start();
 		
 		
-		new Thread(new Runnable(){
-			@Override
-			public void run() {
-				try {
-					Thread.sleep((int)Math.random()*20000);
-					if(jedis.setnx(GOODS_ID,Thread.currentThread().getId()+"")==1){
-						System.out.println(Thread.currentThread().getName()+"»ñÈ¡Ëø³É¹¦");
-					}else{
-						System.out.println(Thread.currentThread().getName()+"»ñÈ¡ËøÊ§°Ü");
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		}).start();
+//		new Thread(new Runnable(){
+//			@Override
+//			public void run() {
+//				try {
+//					Thread.sleep((int)Math.random()*20000);
+//					if(jedis.setnx(GOODS_ID,Thread.currentThread().getId()+"")==1){
+//						System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½È¡ï¿½ï¿½ï¿½É¹ï¿½");
+//					}else{
+//						System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½È¡ï¿½ï¿½Ê§ï¿½ï¿½");
+//					}
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}).start();
 		
 		
-//		System.out.print("Á¬½Ó³É¹¦");
-//		System.out.print("·şÎñÕıÔÚÔËĞĞ£º"+jedis.ping());
+//		System.out.print("ï¿½ï¿½ï¿½Ó³É¹ï¿½");
+//		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½"+jedis.ping());
 //		jedis.set("rst", "Redis String DataType");
-//		System.out.println("StringÀàĞÍ£º"+jedis.get("rst"));
+//		System.out.println("Stringï¿½ï¿½ï¿½Í£ï¿½"+jedis.get("rst"));
 //		Jedis jedis =  new Jedis("127.0.0.1");
 //		jedis.lpush("list","I");
 //		jedis.lpush("list","Love");
 //		jedis.lpush("list","Java");
 //		List<String> rlist = jedis.lrange("list",0,1);
-//		System.out.println("listÀàĞÍ£º"+jedis.lrange("list",0,1));
+//		System.out.println("listï¿½ï¿½ï¿½Í£ï¿½"+jedis.lrange("list",0,1));
 //		jedis.sadd("rset", "hello");
 //		jedis.sadd("rset", "world");
 //		jedis.sadd("rset", "hello");
@@ -70,5 +69,14 @@ public class RedisClient {
 //        while(iterator.hasNext()){
 //        	System.out.println(iterator.next());
 //        }
+		//é˜²åˆ·å•-ä¸€ç§’åªèƒ½æäº¤200æ¬¡
+//		String redisKey = "api_name_"+"æ¥å£åç§°";
+//		Long count = jedis.incr(redisKey);
+//		if(count==1){
+//			jedis.expire(redisKey, 1);
+//		}
+//		if(count>200){//é˜²æ­¢åˆ·å•çš„å®‰å…¨æ‹¦æˆª
+//			//return false;//è¶…è¿‡å°±è¿”å›false,æˆ–è€…å…¶ä»–é”™è¯¯è¿”å›
+//		}
 	}
 }

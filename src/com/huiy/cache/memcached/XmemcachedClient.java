@@ -11,9 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.huiy.springioc.JavaCollection;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ26ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½26ï¿½ï¿½
  * @version 1.0
  */
 public class XmemcachedClient {

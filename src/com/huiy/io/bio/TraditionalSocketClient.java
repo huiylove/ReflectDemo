@@ -9,7 +9,7 @@ import java.net.Socket;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ15ÈÕ
+ * @date   : 2018å¹´6æœˆ15æ—¥
  * @version : 1.0
  */
 public class TraditionalSocketClient {
@@ -23,7 +23,7 @@ public class TraditionalSocketClient {
 		Socket socket ;
 		BufferedReader br;
 		PrintWriter out;
-		System.out.println("¿Í»§¶ËÆô¶¯");
+		System.out.println("å®¢æˆ·ç«¯å¯åŠ¨");
 		try {
 			socket = new  Socket(ip_address,port);
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

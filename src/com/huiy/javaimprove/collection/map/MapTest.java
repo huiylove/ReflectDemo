@@ -1,11 +1,14 @@
 package com.huiy.javaimprove.collection.map;
 
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ8ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½8ï¿½ï¿½
  * @version 1.0
  */
 public class MapTest {
@@ -20,7 +23,7 @@ public class MapTest {
 //				public void run() {
 //					addCount();
 //					hashMap.put(String.valueOf(count),count);
-//					System.out.println(Thread.currentThread().getName()+"ÔËĞĞ"+count+"---"+hashMap.size());
+//					System.out.println(Thread.currentThread().getName()+"ï¿½ï¿½ï¿½ï¿½"+count+"---"+hashMap.size());
 ////					count++;
 //				}
 //	    	}.start();
@@ -55,7 +58,7 @@ public class MapTest {
 //				count++;
 			}
 		}.start();
-//	   System.out.println("main·½·¨½áÊø");
+//	   System.out.println("mainï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		
 	}
 	
@@ -63,5 +66,9 @@ public class MapTest {
 		count++;
 	}
 
+	public static void main1(String[] args) {
+		Hashtable<String,Object> ht = new Hashtable<String,Object>();
+		Map<String,Object> smap = Collections.synchronizedMap(new HashMap<String,Object>()); 
+	}
 	
 }
