@@ -1,12 +1,28 @@
 package com.huiy.javaimprove.abstrctandinterface;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ22ÈÕ
+ * @date   : 2016ï¿½ï¿½12ï¿½ï¿½22ï¿½ï¿½
  * @version 1.0
  *
  *
  */
 public abstract class AbstractClass {
+	
+   int a = 10;
+   
+   public AbstractClass(){
+	  a = 11;
+   }
+   
+   public AbstractClass(int X){
+		  a = X;
+   }
+   
+	
    public abstract  void  A();
+   
+   protected abstract  void  B();
+   
+   
 }

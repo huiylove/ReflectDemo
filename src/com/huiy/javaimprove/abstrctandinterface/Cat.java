@@ -1,24 +1,40 @@
 package com.huiy.javaimprove.abstrctandinterface;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ22ÈÕ
+ * @date   : 2016ï¿½ï¿½12ï¿½ï¿½22ï¿½ï¿½
  * @version 1.0
- *  ÔÚÊµÏÖ¶à½Ó¿ÚµÄÊ±ºòÒ»¶¨Òª±ÜÃâ·½·¨ÃûµÄÖØ¸´¡£
+ *  ï¿½ï¿½Êµï¿½Ö¶ï¿½Ó¿Úµï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½â·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½
  *
  */
 public class Cat extends Animal implements ActionInterface1{
 
+	/* (non-Javadoc)
+	 * @see com.huiy.javaimprove.abstrctandinterface.ActionInterface#fly()
+	 */
+	@Override
+	public void fly() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see com.huiy.javaimprove.abstrctandinterface.ActionInterface1#eat()
+	 */
 	@Override
 	public void eat() {
 		// TODO Auto-generated method stub
-		System.out.println("Ã¨³Ô¶«Î÷eeeeee");
+		
 	}
 
+	/* (non-Javadoc)
+	 * @see com.huiy.javaimprove.abstrctandinterface.Animal#cry()
+	 */
 	@Override
 	public void cry() {
 		// TODO Auto-generated method stub
-		System.out.println("Ã¨½Ğddddd");
+		
 	}
+
 
 }

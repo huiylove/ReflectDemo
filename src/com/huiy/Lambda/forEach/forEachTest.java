@@ -36,10 +36,8 @@ public class forEachTest {
 			//Arrays.sort(atp, (s1,s2)->s1.compareTo(s2));
 		
 			Arrays.sort(atp, (s1,s2)->s1.compareTo(s2));;  
-			List<String> players =  Arrays.asList(atp);  
-			players.forEach((player)->System.out.println(player));
+			Arrays.asList(atp).forEach((player)->System.out.println(player));
 			
-			
-		
+			Arrays.asList( "a", "b", "d" ).forEach((e)->System.out.println(e));
 	}
 }

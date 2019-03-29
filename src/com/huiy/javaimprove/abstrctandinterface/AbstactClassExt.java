@@ -1,8 +1,8 @@
 package com.huiy.javaimprove.abstrctandinterface;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ22ÈÕ
+ * @date   : 2016ï¿½ï¿½12ï¿½ï¿½22ï¿½ï¿½
  * @version 1.0
  *
  *
