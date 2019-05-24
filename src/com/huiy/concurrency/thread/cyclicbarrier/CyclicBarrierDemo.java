@@ -8,32 +8,36 @@ import java.util.concurrent.Executors;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ15ÈÕ
+ * @date   : 2018å¹´6æœˆ15æ—¥
  * @version : 1.0
  * 
- * ÒµÎñ³¡¾°£º¾Û²Í³Ô·¹
- * ¹«Ë¾ÖÜÄ©¾Û²Í£¬µ½Í¬Ò»µØµã³Ô·¹£¬È«Ô±µ½ÆëÖ®ºó£¬²Å¿ªÊ¼³Ô·¹£¨Í¬²½µã£©
- * ¼ÙÈçÈËÃ»µ½Æë£¬ÏÈµ½µÄÈËÖ»ÄÜµÈ´ı£¨×èÈû£©£¬Ö±µ½ÈË¶¼µ½Æë²Å¿ªÊ¼³Ô·¹
+ * ä¸šåŠ¡åœºæ™¯ï¼šèšé¤åƒé¥­
+ * å…¬å¸å‘¨æœ«èšé¤ï¼Œåˆ°åŒä¸€åœ°ç‚¹åƒé¥­ï¼Œå…¨å‘˜åˆ°é½ä¹‹åï¼Œæ‰å¼€å§‹åƒé¥­ï¼ˆåŒæ­¥ç‚¹ï¼‰
+ * å‡å¦‚äººæ²¡åˆ°é½ï¼Œå…ˆåˆ°çš„äººåªèƒ½ç­‰å¾…ï¼ˆé˜»å¡ï¼‰ï¼Œç›´åˆ°äººéƒ½åˆ°é½æ‰å¼€å§‹åƒé¥­
  * 
- * CyclicBarrier ¿ÉÑ­»·µÄÕÏ°­Îï   
- * ¶àÏß³ÌÖ´ĞĞÍêÖ®ºó£¬×îºóºÏ²¢½á¹û
+ * CyclicBarrier å¯å¾ªç¯çš„éšœç¢ç‰©   
+ * å¤šçº¿ç¨‹æ‰§è¡Œå®Œä¹‹åï¼Œæœ€ååˆå¹¶ç»“æœ
  */
 public class CyclicBarrierDemo {
 	
 	
 	
 	public static void main(String[] args) {
-		//3¸öÈËÒ»Æğ¾Û²Í
-		final CyclicBarrier cb = new CyclicBarrier(3,new Runnable(){
-
-			@Override
-			public void run() {
-				System.out.println("ÈËÔ±È«²¿µ½ÆëÖ®ºó£¬È«²¿ÅÄÕÕÁôÁµ");
-			}
-		});
+		//3ä¸ªäººä¸€èµ·èšé¤
+		final CyclicBarrier cb = new CyclicBarrier(3,()->{
+			System.out.println("äººå‘˜å…¨éƒ¨åˆ°é½ä¹‹åï¼Œå…¨éƒ¨æ‹ç…§ç•™æ‹");
+		}
+//		new Runnable(){
+//
+//			@Override
+//			public void run() {
+//				System.out.println("äººå‘˜å…¨éƒ¨åˆ°é½ä¹‹åï¼Œå…¨éƒ¨æ‹ç…§ç•™æ‹");
+//			}
+//		}
+		);
 		
 		
-		//Ïß³Ì³Ø
+		//çº¿ç¨‹æ± 
     	ExecutorService threadPool = Executors.newCachedThreadPool();
     	for(int i=0;i<3;i++){
     		final int user = i+1;
@@ -41,18 +45,18 @@ public class CyclicBarrierDemo {
 				@Override
 				public void run() {
 					try {
-						//Ä£ÄâÃ¿¸öÈËµ½´ïÊ±¼ä²»Ò»Ñù
+						//æ¨¡æ‹Ÿæ¯ä¸ªäººåˆ°è¾¾æ—¶é—´ä¸ä¸€æ ·
 						Thread.sleep((long)Math.random()*10000);
-						System.out.println(user+"´ïµ½¾Û²Íµã,µ±Ç°ÒÑÓĞ£¬"+(cb.getNumberWaiting()+1)+"´ïµ½");
-						//×èÈû
+						System.out.println(user+"è¾¾åˆ°èšé¤ç‚¹,å½“å‰å·²æœ‰ï¼Œ"+(cb.getNumberWaiting()+1)+"è¾¾åˆ°");
+						//é˜»å¡
 						cb.await(); 
 						
-//						if(user==3){//²»¼Ó´ËÌõ¼şÅĞ¶Ï£¬Ã¿¸öÈË¶¼»áÖ´ĞĞÒ»±é
-							System.out.println("ÅÄÕÕ½áÊø£¬¿ªÊ¼³Ô·¹");
+//						if(user==3){//ä¸åŠ æ­¤æ¡ä»¶åˆ¤æ–­ï¼Œæ¯ä¸ªäººéƒ½ä¼šæ‰§è¡Œä¸€é
+							System.out.println("æ‹ç…§ç»“æŸï¼Œå¼€å§‹åƒé¥­");
 //						}
 						
 						Thread.sleep((long)Math.random()*10000);
-						System.out.println(user+"³ÔÍê·¹ÁË£¬×¼±¸»Ø¼Ò");
+						System.out.println(user+"åƒå®Œé¥­äº†ï¼Œå‡†å¤‡å›å®¶");
 
 					} catch (InterruptedException |BrokenBarrierException e1) {
 						e1.printStackTrace();

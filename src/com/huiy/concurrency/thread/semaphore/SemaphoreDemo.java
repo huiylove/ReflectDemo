@@ -8,16 +8,16 @@ import java.util.concurrent.Semaphore;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ15ÈÕ
+ * @date   : 2018å¹´6æœˆ15æ—¥
  * @version : 1.0
  */
 public class SemaphoreDemo {
 	
     
     private void execute(){
-    	//¶¨Òå´°¿Ú¸öÊı
+    	//å®šä¹‰çª—å£ä¸ªæ•°
     	final Semaphore semaphore = new Semaphore(2);
-    	//Ïß³Ì³Ø
+    	//çº¿ç¨‹æ± 
     	ExecutorService threadPool = Executors.newCachedThreadPool();
     	for(int i=1;i<=20;i++){
     		final int user = i;
@@ -26,14 +26,14 @@ public class SemaphoreDemo {
 				@Override
 				public void run() {
 					try {
-						//»ñÈ¡ĞÅºÅÁ¿
+						//è·å–ä¿¡å·é‡
 						semaphore.acquire();
-						System.out.println("ÓÃ»§"+user+"ÕıÔÚ´°¿ÚÂòÆ±");
+						System.out.println("ç”¨æˆ·"+user+"æ­£åœ¨çª—å£ä¹°ç¥¨");
 						Thread.sleep((long)Math.random()*10000);
-						System.out.println("ÓÃ»§"+user+"ÂòÍêÆ±£¬×¼±¸Àë¿ª");
+						System.out.println("ç”¨æˆ·"+user+"ä¹°å®Œç¥¨ï¼Œå‡†å¤‡ç¦»å¼€");
 						Thread.sleep((long)Math.random()*10000);
-						System.out.println("ÓÃ»§"+user+"ÒÑ¾­Àë¿ª");
-						//ÊÍ·ÅĞÅºÅÁ¿
+						System.out.println("ç”¨æˆ·"+user+"å·²ç»ç¦»å¼€");
+						//é‡Šæ”¾ä¿¡å·é‡
 						semaphore.release();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
@@ -52,14 +52,14 @@ public class SemaphoreDemo {
 	}
 	
 	  /**
-     * Ö´ĞĞÈÎÎñÀà£¬»ñÈ¡ĞÅºÅÁ¿ºÍÊÍ·ÅĞÅºÅÁ¿
+     * æ‰§è¡Œä»»åŠ¡ç±»ï¼Œè·å–ä¿¡å·é‡å’Œé‡Šæ”¾ä¿¡å·é‡
      * @author user
      *
      */
     class SemaphoreRunnable implements Runnable{
     	
     	private Semaphore semaphore;
-    	private int user;//¼ÇÂ¼¼¸¸öÓÃ»§
+    	private int user;//è®°å½•å‡ ä¸ªç”¨æˆ·
 		
     	
     	public SemaphoreRunnable(Semaphore semaphore,int user){
@@ -70,14 +70,14 @@ public class SemaphoreDemo {
     	@Override
     	public void run() {
     		try {
-    			//»ñÈ¡ĞÅºÅÁ¿Ğí¿É
+    			//è·å–ä¿¡å·é‡è®¸å¯
 				semaphore.acquire();
-				System.out.println("ÓÃ»§¡¾"+user+"¡¿½øÈë´°¿Ú£¬×¼±¸ÂòÆ±");
+				System.out.println("ç”¨æˆ·ã€"+user+"ã€‘è¿›å…¥çª—å£ï¼Œå‡†å¤‡ä¹°ç¥¨");
 				Thread.sleep((long)Math.random()*10000);
-				System.out.println("ÓÃ»§¡¾"+user+"¡¿ÂòÆ±Íê³É£¬¼´½«Àë¿ª");
+				System.out.println("ç”¨æˆ·ã€"+user+"ã€‘ä¹°ç¥¨å®Œæˆï¼Œå³å°†ç¦»å¼€");
 				Thread.sleep((long)Math.random()*10000);
-				System.out.println("ÓÃ»§¡¾"+user+"¡¿Àë¿ªÊÛÆ±´°¿Ú");
-				//ÊÍ·ÅĞÅºÅÁ¿
+				System.out.println("ç”¨æˆ·ã€"+user+"ã€‘ç¦»å¼€å”®ç¥¨çª—å£");
+				//é‡Šæ”¾ä¿¡å·é‡
 				semaphore.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();

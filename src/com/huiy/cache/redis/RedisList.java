@@ -14,7 +14,8 @@ import redis.clients.jedis.Jedis;
  * 
  * 应用场景
 (1) 消息队列
-　　redis 的 list 数据类型对于大部分使用者来说，是实现队列服务的最经济，最简单的方式。
+　　redis 的 list 数据类型对于大部分使用者来说，是实现队列服务的最经济，最简单的方式。 
+       可以利用lrange命令，做基于redis的分页功能
 　　
 (2) “最新内容”
 因为 list 结构的数据查询两端附近的数据性能非常好，所以适合一些需要获取最新数据的场景，比如新闻类应用的 “最近新闻”。
@@ -31,7 +32,7 @@ public class RedisList {
 		jedis.lpush("list", "2");
 		jedis.lpush("list", "3");
 		jedis.lpush("list2","4","5","6");
-		List rlists = jedis.lrange("list", 0, jedis.llen("list"));
+		List rlists = jedis.lrange("list", 0,-1);
 		rlists.forEach((l)->System.out.println(l));
 		jedis.lrange("list2",0,jedis.llen("list2")).forEach((l)->System.out.println(l));
 

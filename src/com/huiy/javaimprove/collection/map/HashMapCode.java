@@ -6,9 +6,9 @@ import java.util.Map;
 import java.util.Set;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2018Äê1ÔÂ24ÈÕ
+ * @date   : 2018ï¿½ï¿½1ï¿½ï¿½24ï¿½ï¿½
  * @version 1.0
  */
 public class HashMapCode<K,V> implements Map<K,V>{
@@ -239,7 +239,7 @@ public class HashMapCode<K,V> implements Map<K,V>{
 	    }
 	    
 	    void addEntry(int hash, K key, V value, int bucketIndex) {
-	    	Entry<K,V> e = table[bucketIndex];
+	    	    Entry<K,V> e = table[bucketIndex];
 	            table[bucketIndex] = new Entry<K,V>(hash, key, value, e);
 	            if (size++ >= threshold)
 	                resize(2 * table.length);

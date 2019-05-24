@@ -16,6 +16,7 @@ import java.util.concurrent.Executors;
  * @version : 1.0
  * 
  * 性能优化    系统资源  IO、存储、内存、CPU
+ * bio：一个连接一个线程
  * 
  */
 public class TraditionalSocketServer {
@@ -30,8 +31,6 @@ public class TraditionalSocketServer {
 			    final Socket client = server.accept();//阻塞点1
 				
 				threadPool.execute(new Runnable(){
-					
-
 					@Override
 					public void run() {
 						System.out.println("新的客户端的连接请求");
@@ -47,7 +46,6 @@ public class TraditionalSocketServer {
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
-											
 					}
 				});
 				

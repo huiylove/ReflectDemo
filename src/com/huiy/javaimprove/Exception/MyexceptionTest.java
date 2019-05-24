@@ -1,17 +1,17 @@
 package com.huiy.javaimprove.Exception;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ23ÈÕ
+ * @date   : 2016ï¿½ï¿½12ï¿½ï¿½23ï¿½ï¿½
  * @version 1.0
- *RuntimeException¿ÉÒÔ²»ÓÃÉùÃ÷»òÕß´¦Àí
+ *RuntimeExceptionï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½
  *
  */
 
 public class MyexceptionTest {
        public void display(int i) throws MyException{
     	    if(i==0){
-    	    	throw new MyException("Å×³öÎÒ¶¨ÒåµÄÒì³£:¸ÃÖµ²»ÄÜÎª0,ÉÏ¼¶");
+    	    	throw new MyException("ï¿½×³ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½ï¿½ì³£:ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Îª0,ï¿½Ï¼ï¿½");
     	    }else{
     	    	System.out.println(i/2);
     	    }
@@ -23,7 +23,7 @@ public class MyexceptionTest {
 			   test.display(0);
 		   } catch (MyException e) {
 			   System.out.println(e.getMessage());
-//   	       throw new MyException("Å×³öÎÒ¶¨ÒåµÄÒì³£:¸ÃÖµ²»ÄÜÎª0",e);
+//   	       throw new MyException("ï¿½×³ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½ï¿½ì³£:ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Îª0",e);
 //			   e.printStackTrace();
 		   }
        }

@@ -1,12 +1,12 @@
 package com.huiy.concurrency.thread.threadlocal;
 /** 
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ21ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½21ï¿½ï¿½
  * @version 1.0
- * ThreadLocalÕâ¸öÃû×ÖÆğµÃÓĞµãÈÃÈËÎó½â£¬ ºÜÈİÒ×ÈÃÈËÈÏÎªÊÇ¡°±¾µØÏß³Ì¡±£¬ 
- * ÆäÊµÊÇÓÃÀ´Î¬»¤±¾Ïß³ÌµÄ±äÁ¿¡£ ¶ÔÕÕ×ÅÉÏÃæµÄÔ­Àí½²½â£¬ÎÒÏë´ó¼Ò¿ÉÒÔ×ÔĞĞÈ¥¿´ThreadLocalµÄÔ´Âë£¬ÇáËÉÀí½â¡£
- * ThreadLocal ²¢²»½ö½öÊÇJavaÖĞµÄ¸ÅÄî£¬ÆäËûÓïÑÔÀıÈçPython,C#ÖĞÒ²ÓĞ£¬×÷ÓÃÀàËÆ¡£
- * ThreadLocalÔÚÈÕ³£¹¤×÷ÖĞÓÃµÃ²»¶à£¬µ«ÊÇÔÚ¿ò¼Ü£¨ÈçSpring£©ÖĞÊÇ¸ö»ù´¡ĞÔµÄ¼¼Êõ£¬ÔÚÊÂÎñ¹ÜÀí£¬AOPµÈÁìÓò¶¼ÄÜÕÒµ½
+ * ThreadLocalï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ç¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì¡ï¿½ï¿½ï¿½ 
+ * ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ß³ÌµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ThreadLocalï¿½ï¿½Ô´ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â¡£
+ * ThreadLocal ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Javaï¿½ĞµÄ¸ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Python,C#ï¿½ï¿½Ò²ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½
+ * ThreadLocalï¿½ï¿½ï¿½Õ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÃ²ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½Ü£ï¿½ï¿½ï¿½Springï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔµÄ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AOPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½
  */
 
 
@@ -17,18 +17,17 @@ public class ThreadLocalDemo {
 	public static void main(String[] args) {
 		new Thread("threadA"){
 			public void run() {
-				threadLocalA.set("threadAµÄÖµA");
+				threadLocalA.set("threadAï¿½ï¿½ÖµA");
 				threadLocalB.set(1);
 //				getThreadLocalVal();
 				ThreadLocalDemo1.getThreadLocalA();
 				ThreadLocalDemo1.getThreadLocalB();
-
 			}
 		}.start();
 
 		new Thread("threadB"){
 			public void run() {
-				threadLocalA.set("threadBµÄÖµB");
+				threadLocalA.set("threadBï¿½ï¿½ÖµB");
 				threadLocalB.set(2);
 //				getThreadLocalVal();
 			}
@@ -37,8 +36,8 @@ public class ThreadLocalDemo {
 
 	
 	public static void getThreadLocalVal(){
-        System.out.println(Thread.currentThread().getName()+"µÃµ½threadLocalAµÄÖµ" + threadLocalA.get());
-        System.out.println(Thread.currentThread().getName()+"µÃµ½threadLocalBµÄÖµ" + threadLocalB.get());
+        System.out.println(Thread.currentThread().getName()+"ï¿½Ãµï¿½threadLocalAï¿½ï¿½Öµ" + threadLocalA.get());
+        System.out.println(Thread.currentThread().getName()+"ï¿½Ãµï¿½threadLocalBï¿½ï¿½Öµ" + threadLocalB.get());
 
 	}
 }

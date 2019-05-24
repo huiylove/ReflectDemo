@@ -1,10 +1,10 @@
 package com.huiy.designpattern.singleton;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ç±»åŠŸèƒ½æè¿°
  * @author : yuanhui 
- * @date   : 2017Äê3ÔÂ31ÈÕ
+ * @date   : 2017å¹´3æœˆ31æ—¥
  * @version 1.0
- * ¶öººµ¥ÀıÄ£Ê½
+ * é¥¿æ±‰å•ä¾‹æ¨¡å¼
  *
  */
 public class Singleton {
@@ -23,8 +23,8 @@ public class Singleton {
 	}
 	
 
-	//Ë«ÖØĞ£ÑéËø
-	//¿ÉÄÜ»á³öÏÖÖ¸ÁîÖØÅÅĞò£¬µÃµ½Ò»¸öÎ´³õÊ¼»¯Íê³ÉµÄ¶ÔÏó
+	//åŒé‡æ ¡éªŒé”
+	//å¯èƒ½ä¼šå‡ºç°æŒ‡ä»¤é‡æ’åºï¼Œå¾—åˆ°ä¸€ä¸ªæœªåˆå§‹åŒ–å®Œæˆçš„å¯¹è±¡
 //	public static Singleton getInstance(){
 //		if(instance==null){
 //			synchronized(Singleton.class){
@@ -36,7 +36,7 @@ public class Singleton {
 //		return instance;
 //	}
 	
-    //¾²Ì¬ÄÚ²¿Àà
+    //é™æ€å†…éƒ¨ç±»
 //	private static class SingletonHolder{
 //		private static Singleton INSTANCE  = new Singleton();
 //	}

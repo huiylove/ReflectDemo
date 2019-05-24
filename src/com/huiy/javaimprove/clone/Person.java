@@ -3,18 +3,20 @@ package com.huiy.javaimprove.clone;
 import java.io.Serializable;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ22ÈÕ
+ * @date   : 2016ï¿½ï¿½12ï¿½ï¿½22ï¿½ï¿½
  * @version 1.0
  *
  *
  */
-public class Person implements Serializable{
-	 /** ĞÕÃû **/  
-    private String name;  
+public class Person implements Serializable,Cloneable{
+	 /** ï¿½ï¿½ï¿½ï¿½ **/  
+    private String name; 
+    
+    private int age;
       
-    /** µç×ÓÓÊ¼ş **/  
+    /** ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ **/  
     private Email email;  
   
     public String getName() {  
@@ -33,8 +35,17 @@ public class Person implements Serializable{
         this.email = email;  
     }  
       
-    public Person(String name,Email email){  
-        this.name  = name;  
+    public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Person(String name, int age, Email email){  
+        this.name  = name; 
+        this.age = age;
         this.email = email;  
     }  
       
@@ -42,15 +53,16 @@ public class Person implements Serializable{
         this.name = name;  
     }  
   
-//    protected Person clone() {  
-//        Person person = null;  
-//        try {  
-//            person = (Person) super.clone();
+    protected Person clone() {  
+        Person person = null;  
+        try {  
+            person = (Person) super.clone();//è°ƒç”¨Objectç±»çš„cloneæ–¹æ³•å®Œæˆæµ…æ‹·è´
 //            person.setEmail(new Email(person.getEmail().getTitle(),person.getEmail().getContent()));  
-//        } catch (CloneNotSupportedException e) {  
-//            e.printStackTrace();  
-//        }  
-//          
-//        return person;  
-//    }  
+        } catch (CloneNotSupportedException e) {  
+            e.printStackTrace();  
+        }  
+          
+        return person;  
+    }  
+    
 }

@@ -26,9 +26,12 @@ public class RedisSet {
 		final Jedis jedis =  new Jedis("127.0.0.1");
 		jedis.sadd("user:zs","james","melo","paul","kobe");
 		jedis.sadd("user:ls","wade","melo","paul","kobe");
+
+		Set<String> members = jedis.smembers("user:ls");
+		members.forEach((m)->System.out.println(m));
+		
 		//计算交集
-		Set<String> set = jedis.sinter("user:zs","user:ls");
-		set.forEach((s)->System.out.println(s));
+		jedis.sinter("user:zs","user:ls").forEach((s)->System.out.println(s));
 		//计算并集
 		jedis.sunion("user:zs","user:ls").forEach((s)->System.out.print(s+"="));
 		System.out.println();
@@ -36,8 +39,6 @@ public class RedisSet {
 		jedis.sdiff("user:zs","user:ls").forEach((s)->System.out.print(s+"="));
 		System.out.println();
 		jedis.sdiff("user:ls","user:zs").forEach((s)->System.out.print(s+"="));
-
-
 
 
 	}

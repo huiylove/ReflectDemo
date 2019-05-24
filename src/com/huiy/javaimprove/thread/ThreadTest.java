@@ -1,10 +1,10 @@
 package com.huiy.javaimprove.thread;
 
 /**
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * 
  * @author : yuanhui
- * @date : 2017Äê3ÔÂ30ÈÕ
+ * @date : 2017ï¿½ï¿½3ï¿½ï¿½30ï¿½ï¿½
  * @version 1.0
  *
  *

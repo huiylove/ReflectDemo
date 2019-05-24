@@ -20,9 +20,9 @@ import javax.swing.text.Document;
 import org.apache.http.util.CharArrayBuffer;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ç±»åŠŸèƒ½æè¿°
  * @author : yuanhui 
- * @date   : 2017Äê2ÔÂ9ÈÕ
+ * @date   : 2017å¹´2æœˆ9æ—¥
  * @version 1.0
  *
  *
@@ -30,22 +30,22 @@ import org.apache.http.util.CharArrayBuffer;
 public class FileUtil {
 	
 	/**
-	 * »ñÈ¡¿ØÖÆÌ¨ÊäÈëĞÅÏ¢
-	 * Ôİ²»Ö§³ÖÖĞÎÄÊäÈë
+	 * è·å–æ§åˆ¶å°è¾“å…¥ä¿¡æ¯
+	 * æš‚ä¸æ”¯æŒä¸­æ–‡è¾“å…¥
 	 * @throws IOException 
 	 */
 	public static String getInputMessage() throws IOException{
-        System.out.println("ÇëÊäÈëÄúµÄÃüÁî¡Ã");
-		byte[] buff = new byte[1024];//»º³åÊı×é
+        System.out.println("è¯·è¾“å…¥æ‚¨çš„å‘½ä»¤âˆ¶");
+		byte[] buff = new byte[1024];//ç¼“å†²æ•°ç»„
 		int count = System.in.read(buff);
-		char[] out = new char[count-2];////×îºóÁ½Î»Îª½áÊø·û£¬É¾È¥²»Òª
+		char[] out = new char[count-2];////æœ€åä¸¤ä½ä¸ºç»“æŸç¬¦ï¼Œåˆ å»ä¸è¦
 		for(int i=0;i<count-2;i++){
 			out[i] = (char)buff[i];
 		}
 		/**
-		 *  byte ÊÇ×Ö½ÚÊı¾İÀàĞÍ £¬ÊÇÓĞ·ûºÅĞÍµÄ£¬Õ¼1 ¸ö×Ö½Ú£»´óĞ¡·¶Î§Îª-128¡ª127 ¡£
-		 *  char ÊÇ×Ö·ûÊı¾İÀàĞÍ £¬ÊÇÎŞ·ûºÅĞÍµÄ£¬Õ¼2×Ö½Ú(UnicodeÂë £©£»´óĞ¡·¶Î§ ÊÇ0¡ª65535 £»
-		 *  charÊÇÒ»¸ö16Î»¶ş½øÖÆµÄUnicode×Ö·û£¬JAVAÓÃcharÀ´±íÊ¾Ò»¸ö×Ö·û ¡£
+		 *  byte æ˜¯å­—èŠ‚æ•°æ®ç±»å‹ ï¼Œæ˜¯æœ‰ç¬¦å·å‹çš„ï¼Œå 1 ä¸ªå­—èŠ‚ï¼›å¤§å°èŒƒå›´ä¸º-128â€”127 ã€‚
+		 *  char æ˜¯å­—ç¬¦æ•°æ®ç±»å‹ ï¼Œæ˜¯æ— ç¬¦å·å‹çš„ï¼Œå 2å­—èŠ‚(Unicodeç  ï¼‰ï¼›å¤§å°èŒƒå›´ æ˜¯0â€”65535 ï¼›
+		 *  charæ˜¯ä¸€ä¸ª16ä½äºŒè¿›åˆ¶çš„Unicodeå­—ç¬¦ï¼ŒJAVAç”¨charæ¥è¡¨ç¤ºä¸€ä¸ªå­—ç¬¦ ã€‚
 		 * */
 		String message = new String(out);
 		return message;
@@ -53,7 +53,7 @@ public class FileUtil {
 	
 	
 	/**
-	 * ÒÔÎÄ¼şÁ÷µÄĞÎÊ½¸´ÖÆÎÄ¼ş
+	 * ä»¥æ–‡ä»¶æµçš„å½¢å¼å¤åˆ¶æ–‡ä»¶
 	 * @param src
 	 * @param dest
 	 * @throws IOException
@@ -65,14 +65,14 @@ public class FileUtil {
 			 dfile.createNewFile();
 		 }
 		 FileOutputStream fos = new FileOutputStream(dfile);
-//		 BufferedWriter buffWriter = new BufferedWriter(new FileWriter(dfile));-×Ö·ûÁ÷
+//		 BufferedWriter buffWriter = new BufferedWriter(new FileWriter(dfile));-å­—ç¬¦æµ
 		 byte[] buff = new byte[1024];
 		 int buffRead;
-		 //´ËÊäÈëÁ÷ÖĞ½«×î¶à len ¸ö×Ö½ÚµÄÊı¾İ¶ÁÈëÒ»¸ö byte Êı×éÖĞ,·µ»ØµÄÊÇ¶ÁÈëµÄ×Ö½ÚÊı
+		 //æ­¤è¾“å…¥æµä¸­å°†æœ€å¤š len ä¸ªå­—èŠ‚çš„æ•°æ®è¯»å…¥ä¸€ä¸ª byte æ•°ç»„ä¸­,è¿”å›çš„æ˜¯è¯»å…¥çš„å­—èŠ‚æ•°
 		 while((buffRead=fis.read(buff,0,buff.length))!=-1){
-			 //½«Ö¸¶¨ byte Êı×éÖĞ´ÓÆ«ÒÆÁ¿ off ¿ªÊ¼µÄ len ¸ö×Ö½ÚĞ´Èë´ËÎÄ¼şÊä³öÁ÷
+			 //å°†æŒ‡å®š byte æ•°ç»„ä¸­ä»åç§»é‡ off å¼€å§‹çš„ len ä¸ªå­—èŠ‚å†™å…¥æ­¤æ–‡ä»¶è¾“å‡ºæµ
 			 fos.write(buff,0,buffRead);
-//			 buffWriter.write(new String(buff,"utf-8")); - ×Ö½Ú->×Ö·û
+//			 buffWriter.write(new String(buff,"utf-8")); - å­—èŠ‚->å­—ç¬¦
 		 }
 //	    while((buffRead=fis.read(buff))!=-1){
 //     	for(int i=0;i<buffRead;i++){
@@ -91,7 +91,7 @@ public class FileUtil {
 	
 	
 	/**
-	 * ¸ù¾İÊäÈëÁ÷£¬ÒÔÎÄ¼şÁ÷µÄĞÎÊ½ÏÂÔØÎÄ¼ş
+	 * æ ¹æ®è¾“å…¥æµï¼Œä»¥æ–‡ä»¶æµçš„å½¢å¼ä¸‹è½½æ–‡ä»¶
 	 * @param is
 	 * @throws IOException 
 	 */
@@ -108,7 +108,7 @@ public class FileUtil {
 	
 	
 	/**
-	 * PrintStream Ğ´ÎÄ¼ş
+	 * PrintStream å†™æ–‡ä»¶
 	 * @param path
 	 * @throws FileNotFoundException
 	 */
@@ -121,7 +121,7 @@ public class FileUtil {
 	}
 	
 	/**
-	 * ÀûÓÃStringBufferĞ´ÎÄ¼ş¡£¿ÉÒÔÉèÖÃÎÄ¼ş±àÂë
+	 * åˆ©ç”¨StringBufferå†™æ–‡ä»¶ã€‚å¯ä»¥è®¾ç½®æ–‡ä»¶ç¼–ç 
 	 * @param path
 	 * @throws IOException
 	 */
@@ -133,14 +133,14 @@ public class FileUtil {
 		FileOutputStream fos = new FileOutputStream(path);
 		for(int i=0;i<10;i++){
 			StringBuffer sb = new StringBuffer();
-			sb.append("ÕâÊÇµÚ"+i+"ĞĞ:Ç°Ãæ½éÉÜµÄ¸÷ÖÖ·½·¨¶¼²»¹ÜÓÃ,ÎªÊ²Ã´×ÜÊÇÆæ¹ÖµÄÎÊÌâ ");
+			sb.append("è¿™æ˜¯ç¬¬"+i+"è¡Œ:å‰é¢ä»‹ç»çš„å„ç§æ–¹æ³•éƒ½ä¸ç®¡ç”¨,ä¸ºä»€ä¹ˆæ€»æ˜¯å¥‡æ€ªçš„é—®é¢˜ ");
 			fos.write(sb.toString().getBytes("utf-8"));
 		}
 		fos.close();
 	}
 	
     /**
-     * ÎÄ¼şÖØÃüÃû
+     * æ–‡ä»¶é‡å‘½å
      * @param path
      * @param oldName
      * @param newName
@@ -150,7 +150,7 @@ public class FileUtil {
     		File oldFile = new File(path+"/"+oldName);
     		File newFile = new File(path+"/"+newName);
     		if(newFile.exists()){
-    			System.out.print(newName+"ÒÑ¾­´æÔÚ");
+    			System.out.print(newName+"å·²ç»å­˜åœ¨");
     		}else{
     			oldFile.renameTo(newFile);
     		}
@@ -159,7 +159,7 @@ public class FileUtil {
     
     
     /**
-     * ×ªÒÆÎÄ¼ş£¬¸ü»»Ä¿Â¼
+     * è½¬ç§»æ–‡ä»¶ï¼Œæ›´æ¢ç›®å½•
      * @param fileName
      * @param oldPath
      * @param newPath
@@ -173,7 +173,7 @@ public class FileUtil {
     			if(cover){
     				oldFile.renameTo(newFile);
     			}else{
-    				System.out.print(newPath+"ÒÑ´æÔÚ"+fileName);
+    				System.out.print(newPath+"å·²å­˜åœ¨"+fileName);
     			}
     		}else{
     			oldFile.renameTo(newFile);
@@ -182,7 +182,7 @@ public class FileUtil {
     }
     
     /**
-     * ÀûÓÃFileInputStream¶ÁÈ¡ÎÄ¼ş
+     * åˆ©ç”¨FileInputStreamè¯»å–æ–‡ä»¶
      * @param src
      * @return
      * @throws IOException
@@ -206,7 +206,7 @@ public class FileUtil {
     
     
     /**
-     * ÀûÓÃBufferedReader¶ÁÈ¡ÎÄ¼ş
+     * åˆ©ç”¨BufferedReaderè¯»å–æ–‡ä»¶
      * @param src
      * @return
      * @throws IOException
@@ -221,7 +221,7 @@ public class FileUtil {
     	String bfrline = null;
     	StringBuffer sb = new StringBuffer();
     	bfrline = br.readLine();
-//      br.readLine().getBytes("UTF-8");//-×Ö·û->×Ö½Ú
+//      br.readLine().getBytes("UTF-8");//-å­—ç¬¦->å­—èŠ‚
     	while(bfrline!=null){
     		sb.append(bfrline+" ");
     		bfrline = br.readLine();
@@ -232,15 +232,15 @@ public class FileUtil {
     
     
     /**
-     * ÀûÓÃInputStreamReader¶ÁÈ¡ÊäÈëÁ÷,²¢·µ»Ø½á¹û
-     * InputStreamReader   - ×Ö½ÚÁ÷×ª»»Îª×Ö·ûÁ÷
+     * åˆ©ç”¨InputStreamReaderè¯»å–è¾“å…¥æµ,å¹¶è¿”å›ç»“æœ
+     * InputStreamReader   - å­—èŠ‚æµè½¬æ¢ä¸ºå­—ç¬¦æµ
      * @param is
      * @return
      * @throws IOException
      */
     public static String InputStreamReader(InputStream is) throws IOException{
     	Reader reader = new InputStreamReader(is);
-    	int capacity = 1024;//ÊäÈëÄÚÈİµÄ³¤¶È
+    	int capacity = 1024;//è¾“å…¥å†…å®¹çš„é•¿åº¦
         CharArrayBuffer buffer = new CharArrayBuffer(capacity);
      	char[] tmp = new char[1024];
     	int tempReader ;
@@ -254,7 +254,7 @@ public class FileUtil {
     
     
     /**
-     * ÀûÓÃdom4j¶ÁÈ¡xmlÎÄ¼ş
+     * åˆ©ç”¨dom4jè¯»å–xmlæ–‡ä»¶
      * @param path
      * @return
      * @throws DocumentException
@@ -265,31 +265,31 @@ public class FileUtil {
 //        FileInputStream fis = new FileInputStream(file);
 //        BufferedReader bufferedreader = new BufferedReader(new FileReader(file));
 //        SAXReader saxreader = new SAXReader();
-// 		List rowList = null;  //»ñÈ¡Ö¸¶¨Â·¾¶ÏÂµÄÔªËØÁĞ±í,ÕâÀïÖ¸»ñÈ¡ËùÓĞµÄdataÏÂµÄrowÔªËØ  
+// 		List rowList = null;  //è·å–æŒ‡å®šè·¯å¾„ä¸‹çš„å…ƒç´ åˆ—è¡¨,è¿™é‡ŒæŒ‡è·å–æ‰€æœ‰çš„dataä¸‹çš„rowå…ƒç´   
 // 		Document document = null;
 // 		document = saxreader.read(bufferedreader);
 // 		rowList = document.selectNodes("/data/row");  
 //		for(Iterator iter = rowList.iterator();iter.hasNext();){  
-//			 //»ñµÃ¾ßÌåµÄrowÔªËØ   
+//			 //è·å¾—å…·ä½“çš„rowå…ƒç´    
 //			 Element element = (Element)iter.next();
-//			 //»ñµÃrowÔªËØµÄËùÓĞÊôĞÔÁĞ±í  
+//			 //è·å¾—rowå…ƒç´ çš„æ‰€æœ‰å±æ€§åˆ—è¡¨  
 //			 List elementList  = element.attributes();
 //			 for(Iterator iter1 = elementList.iterator();iter1.hasNext();){  
-//				 //½«Ã¿¸öÊôĞÔ×ª»¯ÎªÒ»¸ö³éÏóÊôĞÔ£¬È»ºó»ñÈ¡ÆäÃû×ÖºÍÖµ  
+//				 //å°†æ¯ä¸ªå±æ€§è½¬åŒ–ä¸ºä¸€ä¸ªæŠ½è±¡å±æ€§ï¼Œç„¶åè·å–å…¶åå­—å’Œå€¼  
 //	             AbstractAttribute aa = (AbstractAttribute)iter1.next(); 
 //	             System.out.println("Name="+aa.getName()+"Value="+aa.getValue());
 //			 }
 //			 System.out.println(element.getName());  
 //		     System.out.println(element.attributeValue("queryDTO.enterpriseId"));  
-//		     //Èç¹ûelementÏÂÓĞ×ÓÔªËØ£¬(ÀàËÆwidth="**")£¬ÒªÏë»ñµÃ¸Ã×ÓÔªËØµÄÖµ£¬¿ÉÒÔÓÃÈçÏÂ·½·¨  
-//	         System.out.println(element.elementText("width"));//ÒòÎªÃ»ÓĞ£¬ËùÒÔÊä³öÎªnull¡£  
+//		     //å¦‚æœelementä¸‹æœ‰å­å…ƒç´ ï¼Œ(ç±»ä¼¼width="**")ï¼Œè¦æƒ³è·å¾—è¯¥å­å…ƒç´ çš„å€¼ï¼Œå¯ä»¥ç”¨å¦‚ä¸‹æ–¹æ³•  
+//	         System.out.println(element.elementText("width"));//å› ä¸ºæ²¡æœ‰ï¼Œæ‰€ä»¥è¾“å‡ºä¸ºnullã€‚  
 //		}
 //		bufferedreader.close();
 //        return document;
 //    }
     
     /**
-     * ´´½¨ÎÄ¼ş¼Ğ
+     * åˆ›å»ºæ–‡ä»¶å¤¹
      * @param path
      */
     public static void createDir(String path){
@@ -301,7 +301,7 @@ public class FileUtil {
     }
     
     /**
-     * ´´½¨ĞÂÎÄ¼ş
+     * åˆ›å»ºæ–°æ–‡ä»¶
      * @param path
      * @throws IOException 
      */
@@ -313,7 +313,7 @@ public class FileUtil {
     }
     
     /**
-     * É¾³ıÎÄ¼ş
+     * åˆ é™¤æ–‡ä»¶
      * @param path
      */
     public static void delFile(String path){
@@ -324,7 +324,7 @@ public class FileUtil {
     }
     
     /**
-     * É¾³ıÎÄ¼ş¼Ğ--µİ¹éÉ¾³ı¸ÃÄ¿Â¼ÏÂµÄËùÓĞ×ÓÄ¿Â¼ºÍÎÄ
+     * åˆ é™¤æ–‡ä»¶å¤¹--é€’å½’åˆ é™¤è¯¥ç›®å½•ä¸‹çš„æ‰€æœ‰å­ç›®å½•å’Œæ–‡
      * @param path
      */
     public static void delDir(String path){
@@ -360,20 +360,20 @@ public class FileUtil {
 //			 FileUtil.delFile("e:/e.txt");
 //			 FileUtil.delDir("e:/dir");
 //			 File f1 = new File("c:/Users/user/Desktop/a.txt");
-//			 File f2 = new File("c:/Users/user/Desktop/b.txt");	//×¢Òâc.txtÀïµÄÄÚÈİÊÇ1234567890
+//			 File f2 = new File("c:/Users/user/Desktop/b.txt");	//æ³¨æ„c.txté‡Œçš„å†…å®¹æ˜¯1234567890
 //			 FileInputStream fis = new FileInputStream(f1);
-//			 FileOutputStream fos = new FileOutputStream(f2,false);	//´´½¨FileInputStream¶ÔÏó
+//			 FileOutputStream fos = new FileOutputStream(f2,false);	//åˆ›å»ºFileInputStreamå¯¹è±¡
 //			 char ch;
 //			 byte[] b = new byte[(int)f1.length()];
-//			 int reader = fis.read(b,5,3);//read()·½·¨ÊÇ¶ÁÈ¡Ò»¸ö×Ö½Ú×÷ÎªÒ»¸öÕûÊı·µ»Ø
+//			 int reader = fis.read(b,5,3);//read()æ–¹æ³•æ˜¯è¯»å–ä¸€ä¸ªå­—èŠ‚ä½œä¸ºä¸€ä¸ªæ•´æ•°è¿”å›
 //			 System.out.println(reader);
 //			 for(int i=0;i<f1.length();i++)
 //			 { 
-//			 ch=(char)fis.read();//read()·µ»ØµÄÊÇ¶ÁÈëµÄÒ»¸ö×Ö½ÚËù¶ÔÓ¦µÄintÖµ
+//			 ch=(char)fis.read();//read()è¿”å›çš„æ˜¯è¯»å…¥çš„ä¸€ä¸ªå­—èŠ‚æ‰€å¯¹åº”çš„intå€¼
 //			 fos.write(b[8]);	
 //			 }
-//			 System.out.println(b[7]);//Õâ¸öb[7]´òÓ¡³öÀ´µÄ½á¹ûÔõÃ´»áÊÇ51£¿£¿£¿ 
-//			 fos.close();	//¹Ø±Õ
+//			 System.out.println(b[7]);//è¿™ä¸ªb[7]æ‰“å°å‡ºæ¥çš„ç»“æœæ€ä¹ˆä¼šæ˜¯51ï¼Ÿï¼Ÿï¼Ÿ 
+//			 fos.close();	//å…³é—­
 		 }catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -18,6 +18,10 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 		
+<!-- 		<bean name="memcachedServers" class="java.net.InetSocketAddress"  factory-method="getAddresses">   -->
+<!--           <constructor-arg value="127.0.0.1:11211" />   -->
+<!--         </bean>   -->
+    
 	<bean id="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">
 		<!-- XMemcachedClientBuilder have two arguments.First is server list,and 
 			second is weights array. -->
@@ -34,6 +38,9 @@
 				<!-- 如果是集群的话，继续陪bean -->
 			</list>
 		</constructor-arg>
+		
+<!-- 	<constructor-arg index="0" ref="memcachedServers" />    -->
+
 		<!-- 权重配置 -->
 		<!-- 
 			<constructor-arg> 
@@ -58,4 +65,5 @@
 	<bean id="memcachedClient" factory-bean="memcachedClientBuilder"
 		factory-method="build" destroy-method="shutdown" />
 		
+	
 </beans>

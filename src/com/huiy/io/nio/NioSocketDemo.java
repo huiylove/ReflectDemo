@@ -36,7 +36,7 @@ public class NioSocketDemo {
 	 */
 	public void initServer(int port) throws IOException{
 		 ServerSocketChannel ssc =  ServerSocketChannel.open();
-		 ssc.configureBlocking(false);//非阻塞
+		 ssc.configureBlocking(false);//非阻塞 
 		 ssc.socket().bind(new InetSocketAddress(port));//绑定端口
 		 
 		 this.selector =  Selector.open();

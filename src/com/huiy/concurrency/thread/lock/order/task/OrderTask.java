@@ -7,7 +7,7 @@ import com.huiy.concurrency.thread.lock.order.util.OrderService;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ14ÈÕ
+ * @date   : 2018å¹´6æœˆ14æ—¥
  * @version : 1.0
  */
 public class OrderTask implements Runnable{
@@ -23,11 +23,11 @@ public class OrderTask implements Runnable{
 	@Override
 	public void run() {
 		try {
-			latch.await();//Í¬²½µã£¬µ¹¼ÆÊ±¼ÆÊıÆ÷countÎª0,¿ªÊ¼Ö´ĞĞ£»
+			latch.await();//åŒæ­¥ç‚¹ï¼Œå€’è®¡æ—¶è®¡æ•°å™¨countä¸º0,å¼€å§‹æ‰§è¡Œï¼›
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.printf("Ïß³ÌÃû%s¶©µ¥ºÅ:%s \r\n",Thread.currentThread().getName(),orderService.getOrderNo());
+		System.out.printf("çº¿ç¨‹å%sè®¢å•å·:%s \r\n",Thread.currentThread().getName(),orderService.getOrderNo());
 	}
 
 }

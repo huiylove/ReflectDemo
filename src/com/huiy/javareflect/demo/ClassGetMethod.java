@@ -6,9 +6,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ç±»åŠŸèƒ½æè¿°
  * @author : yuanhui 
- * @date   : 2016Äê12ÔÂ14ÈÕ
+ * @date   : 2016å¹´12æœˆ14æ—¥
  * @version 1.0
  *
  *
@@ -17,12 +17,12 @@ public class ClassGetMethod {
 
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, SecurityException, NoSuchMethodException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException, ClassNotFoundException {
 		// TODO Auto-generated method stub
-		//1.»ñÈ¡ÀàµÄClass¶ÔÏó
+		//1.è·å–ç±»çš„Classå¯¹è±¡
 		Boolean var1 = true;
 		Class<?> classType1 = var1.getClass();
 		Class<?> classType2 = Boolean.class;
 		Class<?> classType3 = Class.forName("java.lang.Boolean");
-		Class<?> classType4 = Boolean.TYPE;//·µ»ØÔ­ÉúÀàĞÍboolean
+		Class<?> classType4 = Boolean.TYPE;//è¿”å›åŸç”Ÿç±»å‹boolean
 
 		System.out.println(classType1);
 		System.out.println(classType2);
@@ -31,13 +31,13 @@ public class ClassGetMethod {
 		
 		System.out.println();  
 
-		//2.»ñÈ¡ÀàµÄFields
+		//2.è·å–ç±»çš„Fields
 		Class<?> classType = ExtendType.class;
 		System.out.println(classType.getField("name").get(classType));
 		System.out.println(classType.getDeclaredMethod("getName").invoke(classType));
 		
 
-		//Ê¹ÓÃgetFields»ñÈ¡ÊôĞÔ  
+		//ä½¿ç”¨getFieldsè·å–å±æ€§  
 		Field[] fields = classType.getFields();  
 		for (Field f : fields)  
 		{  
@@ -46,19 +46,19 @@ public class ClassGetMethod {
 		   
 		System.out.println();  
 		               
-		//Ê¹ÓÃgetDeclaredFields»ñÈ¡ÊôĞÔ  
+		//ä½¿ç”¨getDeclaredFieldsè·å–å±æ€§  
 		fields = classType.getDeclaredFields();  
 		for (Field f : fields)  
 		{  
 		    System.out.println(f);  
 		}  
-		/* getFields·µ»ØµÄÊÇÉêÃ÷ÎªpublicµÄÊôĞÔ£¬°üÀ¨¸¸ÀàÖĞ¶¨Òå£¬
-		   getDeclaredFields·µ»ØµÄÊÇÖ¸¶¨Àà¶¨ÒåµÄËùÓĞ¶¨ÒåµÄÊôĞÔ£¬²»°üÀ¨¸¸ÀàµÄ
+		/* getFieldsè¿”å›çš„æ˜¯ç”³æ˜ä¸ºpublicçš„å±æ€§ï¼ŒåŒ…æ‹¬çˆ¶ç±»ä¸­å®šä¹‰ï¼Œ
+		   getDeclaredFieldsè¿”å›çš„æ˜¯æŒ‡å®šç±»å®šä¹‰çš„æ‰€æœ‰å®šä¹‰çš„å±æ€§ï¼Œä¸åŒ…æ‹¬çˆ¶ç±»çš„
 		*/
 		
 		 System.out.println();  
 		 
-		 //3.»ñÈ¡ÀàµÄMethods
+		 //3.è·å–ç±»çš„Methods
 		 Method[] methods = classType.getMethods();
 		 for (Method m : methods)  
 		 {  
@@ -73,11 +73,11 @@ public class ClassGetMethod {
 	     } 
 
 		 System.out.println();  
-		 /* getMethods·µ»ØµÄÊÇÉêÃ÷ÎªpublicµÄ·½·¨£¬°üÀ¨¸¸ÀàÖĞ¶¨Òå£¬
-		    getDeclaredMethods·µ»ØµÄÊÇÖ¸¶¨Àà¶¨ÒåµÄËùÓĞ¶¨ÒåµÄ·½·¨£¬²»°üÀ¨¸¸ÀàµÄ
+		 /* getMethodsè¿”å›çš„æ˜¯ç”³æ˜ä¸ºpublicçš„æ–¹æ³•ï¼ŒåŒ…æ‹¬çˆ¶ç±»ä¸­å®šä¹‰ï¼Œ
+		    getDeclaredMethodsè¿”å›çš„æ˜¯æŒ‡å®šç±»å®šä¹‰çš„æ‰€æœ‰å®šä¹‰çš„æ–¹æ³•ï¼Œä¸åŒ…æ‹¬çˆ¶ç±»çš„
 		 */
 		  
-		 //4.»ñÈ¡ÀàµÄConstructor
+		 //4.è·å–ç±»çš„Constructor
 		 Constructor<?>[] constructors = classType.getConstructors();
 		 for (Constructor<?> c : constructors)  
 		 {  
@@ -94,12 +94,12 @@ public class ClassGetMethod {
 		 
 		 System.out.println();  
 		 
-		 /* getConstructors·µ»ØµÄÊÇÉêÃ÷ÎªpublicµÄ¹¹Ôìº¯Êı
-		    getDeclaredConstructors·µ»ØµÄÊÇÖ¸¶¨Àà¶¨ÒåµÄËùÓĞµÄ¹¹Ôìº¯Êı
+		 /* getConstructorsè¿”å›çš„æ˜¯ç”³æ˜ä¸ºpublicçš„æ„é€ å‡½æ•°
+		    getDeclaredConstructorsè¿”å›çš„æ˜¯æŒ‡å®šç±»å®šä¹‰çš„æ‰€æœ‰çš„æ„é€ å‡½æ•°
 		 */
 		 
-         //5.´´½¨ĞÂÀàµÄÊµÀı	- Í¨¹ı·´Éä»úÖÆ
-		 //µ÷ÓÃÎŞ×Ô±äÁ¿ctor
+         //5.åˆ›å»ºæ–°ç±»çš„å®ä¾‹	- é€šè¿‡åå°„æœºåˆ¶
+		 //è°ƒç”¨æ— è‡ªå˜é‡ctor
 		 Object inst = classType.newInstance();
 		 System.out.println(inst);
 		 System.out.println(); 
@@ -109,21 +109,21 @@ public class ClassGetMethod {
 		 System.out.println(inst);
 		 System.out.println(); 
 		 
-		 //µ÷ÓÃ´ø²ÎÊıconstructor
+		 //è°ƒç”¨å¸¦å‚æ•°constructor
 		 constructor1 = classType.getDeclaredConstructor(int.class,String.class);
 		 inst = constructor1.newInstance(1,"1445");
 		 System.out.println(inst);
 		 System.out.println(); 
 		 
-		 //6.µ÷ÓÃÀàµÄº¯Êı
+		 //6.è°ƒç”¨ç±»çš„å‡½æ•°
 		 inst = classType.newInstance();
 		 Method logMethod = classType.getDeclaredMethod("Log",String.class);
-		 logMethod.setAccessible(true);//»ñÈ¡Ë½ÓĞÊôĞÔµÄÊ±ºò±ØĞëÏÈÉèÖÃAccessibleÎªtrue
-		 logMethod.invoke(inst, "µ÷ÓÃ·½·¨");
+		 logMethod.setAccessible(true);//è·å–ç§æœ‰å±æ€§çš„æ—¶å€™å¿…é¡»å…ˆè®¾ç½®Accessibleä¸ºtrue
+		 logMethod.invoke(inst, "è°ƒç”¨æ–¹æ³•");
 		 System.out.println(); 
 
 		 
-		 //7.ÉèÖÃ/»ñÈ¡ÀàµÄÊôĞÔÖµ
+		 //7.è®¾ç½®/è·å–ç±»çš„å±æ€§å€¼
 		 inst = classType.newInstance();
          Field intFiled = classType.getField("pubIntExtendField");
          intFiled.setInt(inst,589);
@@ -136,7 +136,7 @@ public class ClassGetMethod {
 		 System.out.println(strFiled.get(inst));
 
 		 
-		 //8.»ñÈ¡ÀàµÄ½Ó¿Ú
+		 //8.è·å–ç±»çš„æ¥å£
 		 Class<?>[] interfaces = classType.getInterfaces();
 		 for (Class<?> c : interfaces)  
 		 {  

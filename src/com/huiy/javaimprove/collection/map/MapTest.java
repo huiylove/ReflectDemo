@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /** 
  * �๦������
@@ -14,12 +15,18 @@ import java.util.Map;
 public class MapTest {
 
 	static HashMap<String,Object> hashMap = new HashMap<String,Object>();
+	static ConcurrentHashMap<String,Object> concurrentHashMap = new ConcurrentHashMap<String,Object>();
+	ThreadLocal<String> threadLocal = new ThreadLocal<String>(){
+		
+	};
+
 	static volatile int count;
 	
 	public static void main(String[] args) {
+		concurrentHashMap.size();
 //		for(int i=0;i<100;i++){
 //			new Thread(){
-//				@Override
+//				@Override   
 //				public void run() {
 //					addCount();
 //					hashMap.put(String.valueOf(count),count);

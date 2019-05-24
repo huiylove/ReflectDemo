@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Set;
+import java.util.TreeSet;
 
 /** 
- * ¼¯ºÏ¹¤¾ßÀà
- * threshold:ãÐÖµ 
+ * ï¿½ï¿½ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½
+ * threshold:ï¿½ï¿½Öµ 
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ6ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½6ï¿½ï¿½
  * @version 1.0
  */
 public class CollectionsUtils {
@@ -37,6 +38,9 @@ public class CollectionsUtils {
 //		Arrays.sort(list.toArray());
 //		iteratorList(list);
 //		List<String> linkedList = new LinkedList<String>();
+		Set<String> s = new TreeSet<String>((o1,o2)->{
+			return o1.compareTo(o2);
+		});
 	}
 	
 	public static <T> void  iteratorList(List<T> list){

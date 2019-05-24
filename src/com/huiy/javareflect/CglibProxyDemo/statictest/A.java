@@ -1,26 +1,26 @@
 package com.huiy.javareflect.CglibProxyDemo.statictest;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ç±»åŠŸèƒ½æè¿°
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ7ÈÕ
+ * @date   : 2018å¹´3æœˆ7æ—¥
  * @version 1.0
  */
 public class A {
 	
-	static{
-		System.out.println("¸¸ÀàµÄ¾²Ì¬´úÂë¿é");
-	}
+		static{
+			System.out.println("çˆ¶ç±»çš„é™æ€ä»£ç å—");
+		}
 	
 	  public A(){
-		  System.out.println("¸¸ÀàµÄ¹¹Ôìº¯Êı");
+		  System.out.println("çˆ¶ç±»çš„æ„é€ å‡½æ•°");
 	  }
 	  
 	  public void addBook(){
-		   System.out.println("ĞÂÔöÍ¼Êé....");
+		   System.out.println("æ–°å¢å›¾ä¹¦....");
 	   }
 	   
 	   public static void readBook(){
-		   System.out.println("¶ÁÍ¼Êé....");
+		   System.out.println("è¯»å›¾ä¹¦....");
 	   }
 	   
 	   public final void printBookName(String name){

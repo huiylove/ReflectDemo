@@ -12,7 +12,7 @@ import com.huiy.concurrency.thread.lock.order.util.OrderService;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ14ÈÕ
+ * @date   : 2018å¹´6æœˆ14æ—¥
  * @version : 1.0
  */
 public class RedisOrder {
@@ -24,10 +24,10 @@ public class RedisOrder {
 		for(int i=0;i<10;i++){
 			executorService.submit(new OrderTask(latch,orderService));
 		}
-		/*mainº¯ÊıÖ´ĞĞÍêºó£¬Ïß³Ì³Ø²Å¿ªÊ¼Òì²½Ö´ĞĞ´úÂë*/
-//		System.out.println(Thread.currentThread().getName()+"Ö´ĞĞÇ°"+latch.getCount());
+		/*mainå‡½æ•°æ‰§è¡Œå®Œåï¼Œçº¿ç¨‹æ± æ‰å¼€å§‹å¼‚æ­¥æ‰§è¡Œä»£ç */
+//		System.out.println(Thread.currentThread().getName()+"æ‰§è¡Œå‰"+latch.getCount());
 		latch.countDown();
-//		System.out.println(Thread.currentThread().getName()+"Ö´ĞĞºó"+latch.getCount());
+//		System.out.println(Thread.currentThread().getName()+"æ‰§è¡Œå"+latch.getCount());
 		executorService.shutdown();
 	}
 		

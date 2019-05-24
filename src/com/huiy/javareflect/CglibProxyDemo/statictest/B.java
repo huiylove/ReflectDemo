@@ -1,30 +1,39 @@
 package com.huiy.javareflect.CglibProxyDemo.statictest;
 /** 
- * Àà¹¦ÄÜÃèÊö
+ * ï¿½à¹¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author : yuanhui 
- * @date   : 2018Äê3ÔÂ7ÈÕ
+ * @date   : 2018ï¿½ï¿½3ï¿½ï¿½7ï¿½ï¿½
  * @version 1.0
  */
 public class B extends A {
 	
+	private static int value = 1;
+	
 	static{
-		System.out.println("×ÓÀàµÄ¾²Ì¬´úÂë¿é");
+		System.out.println("å­ç±»çš„é™æ€ä»£ç å—");
+		System.out.println(value);
+
+	}
+	
+	public B(){
+		value++;
 	}
 	
 	 public B(String arg){
-		  System.out.println("×ÓÀàµÄ¹¹Ôìº¯Êı"+arg);
+		  System.out.println("å­ç±»çš„æœ‰å‚æ„é€ å‡½æ•°"+arg);
 	 }
 	  
-	public static void readBook(){
-		System.out.println("×ÓÀàµÄ¾²Ì¬·½·¨");
-	}
+//	public static void readBook(){
+//		System.out.println("å­ç±»è¯»å›¾ä¹¦....");
+//	}
 	
 	
 	public static void main(String[] args){
-		A b = new B("11");
-		b.printBookName("ee");
-		readBook();//µ÷ÓÃ×ÓÀàµÄ¾²Ì¬
-		b.readBook();//¸¸ÀàµÄ¾²Ì¬·½·¨
+		A b = new B();
+//		A b = new B("11");
+//		b.printBookName("ee");
+		readBook();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½Ì¬
+//		b.readBook();//ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
 	}
 	
 }

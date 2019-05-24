@@ -5,50 +5,50 @@ import java.util.concurrent.CountDownLatch;
 /** 
  * 
  * @author : yuanhui 
- * @date   : 2018Äê6ÔÂ15ÈÕ
+ * @date   : 2018å¹´6æœˆ15æ—¥
  * @version : 1.0
  */
 public class CountDownLatchDemo {
 	
 	public static void main(String[] args){
 		final CountDownLatch latch =  new CountDownLatch(2);
-		//ÈÎÎñ1
+		//ä»»åŠ¡1
 		new Thread(new Runnable(){
 			@Override
 			public void run() {
-				System.out.println("ÈÎÎñ1ÕıÔÚÖ´ĞĞÈÎÎñ");
+				System.out.println("ä»»åŠ¡1æ­£åœ¨æ‰§è¡Œä»»åŠ¡");
 				try {
 					Thread.sleep((long)Math.random()*10000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.println("ÈÎÎñ1Ö´ĞĞÍê±Ï");
-				latch.countDown();//¼ÆÊıÆ÷-1
+				System.out.println("ä»»åŠ¡1æ‰§è¡Œå®Œæ¯•");
+				latch.countDown();//è®¡æ•°å™¨-1
 			}
 		}).start();
 		
-		//ÈÎÎñ2
+		//ä»»åŠ¡2
 		new Thread(new Runnable(){
 			@Override
 			public void run() {
-				System.out.println("ÈÎÎñ2ÕıÔÚÖ´ĞĞÈÎÎñ");
+				System.out.println("ä»»åŠ¡2æ­£åœ¨æ‰§è¡Œä»»åŠ¡");
 				try {
 					Thread.sleep((long)Math.random()*10000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				System.out.println("ÈÎÎñ2Ö´ĞĞÍê±Ï");
-				latch.countDown();//¼ÆÊıÆ÷-1
+				System.out.println("ä»»åŠ¡2æ‰§è¡Œå®Œæ¯•");
+				latch.countDown();//è®¡æ•°å™¨-1
 			}
 		}).start();
 //		
 		
-		//µÈ´ıÆäËûÁ½¸öÈÎÎñÖ´ĞĞÍê±Ï£¬Ö÷Ïß³Ì²Å¿ªÊ¼
-		System.out.println("µÈ´ıÆäËûÁ½¸öÈÎÎñÖ´ĞĞÍê±Ï£¬Ö÷Ïß³Ì"+Thread.currentThread().getName()+"²Å¿ªÊ¼");
+		//ç­‰å¾…å…¶ä»–ä¸¤ä¸ªä»»åŠ¡æ‰§è¡Œå®Œæ¯•ï¼Œä¸»çº¿ç¨‹æ‰å¼€å§‹
+		System.out.println("ç­‰å¾…å…¶ä»–ä¸¤ä¸ªä»»åŠ¡æ‰§è¡Œå®Œæ¯•ï¼Œä¸»çº¿ç¨‹"+Thread.currentThread().getName()+"æ‰å¼€å§‹");
 		
 		try {
-			latch.await();//Í¬²½µã
-			System.out.println("ÆäËûÁ½¸öÈÎÎñÖ´ĞĞÍê±Ï£¬Ö÷Ïß³Ì"+Thread.currentThread().getName()+"¿ªÊ¼Ö´ĞĞ");
+			latch.await();//åŒæ­¥ç‚¹
+			System.out.println("å…¶ä»–ä¸¤ä¸ªä»»åŠ¡æ‰§è¡Œå®Œæ¯•ï¼Œä¸»çº¿ç¨‹"+Thread.currentThread().getName()+"å¼€å§‹æ‰§è¡Œ");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
